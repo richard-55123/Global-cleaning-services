@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
                 {/* À propos */}
                 <div>
                     <div className="flex items-center gap-2 mb-4">
-                        <img src="/fccWite.png" alt={t("footer.logoAlt")} className="h-20 w-auto" />
+                        <img src="/images/logo.png" alt={t("footer.logoAlt")} className="h-20 w-auto" />
                     </div>
                     <p className="text-gray-400 text-sm mb-4">{aboutDescription}</p>
                     <h3 className="text-[.9rem] md:text-[1.4rem] font-heading font-bold mb-3">
