@@ -15,7 +15,7 @@
     "hero": {
         "professional_cleaning": {
             "title": "NETTOYAGE PROFESSIONNEL",
-            "text": "Naoussi Services est une société de nettoyage professionnel et industriel située à Douala. Nous prenons en charge les particuliers et les entreprises pour des prestations de qualité.",
+            "text": "Global cleaning services est une société de nettoyage professionnel et industriel située à Douala. Nous prenons en charge les particuliers et les entreprises pour des prestations de qualité.",
             "button": "Découvrir nos services"
         },
         "maintenance_disinfection": {
@@ -25,14 +25,14 @@
         },
         "for_clients_businesses": {
             "title": "SERVICES POUR PARTICULIERS ET ENTREPRISES",
-            "text": "Que vous soyez un particulier ou un professionnel, Naoussi Services s’adapte à vos besoins et vous accompagne dans toutes vos demandes de nettoyage avec sérieux et efficacité.",
+            "text": "Que vous soyez un particulier ou un professionnel, Global cleaning services s’adapte à vos besoins et vous accompagne dans toutes vos demandes de nettoyage avec sérieux et efficacité.",
             "button": "Contactez-nous"
         }
     },
     "howItWorks": {
         "subtitle": "Comment ça marche",
-        "title": "Le parcours de nettoyage Naoussi Services",
-        "description": "Naoussi Services propose des solutions de nettoyage professionnelles et industrielles, adaptées à vos besoins, que vous soyez particulier ou entreprise.",
+        "title": "Le parcours de nettoyage Global cleaning services",
+        "description": "Global cleaning services propose des solutions de nettoyage professionnelles et industrielles, adaptées à vos besoins, que vous soyez particulier ou entreprise.",
         "steps": [
             {
                 "title": "Planifiez votre nettoyage",
@@ -47,12 +47,12 @@
                 "description": "Nous garantissons un espace propre, désinfecté et agréable, que ce soit pour votre domicile ou vos locaux professionnels."
             }
         ],
-        "cta": "Prêt à transformer votre espace ? Faites confiance à Naoussi Services pour un nettoyage rapide, fiable et professionnel. Contactez-nous dès aujourd'hui pour un devis personnalisé.",
+        "cta": "Prêt à transformer votre espace ? Faites confiance à Global cleaning services pour un nettoyage rapide, fiable et professionnel. Contactez-nous dès aujourd'hui pour un devis personnalisé.",
         "button": "Contactez-Nous"
     },
-    "about.titleTag": "À propos de Naoussi Services",
+    "about.titleTag": "À propos de Global cleaning services",
     "about.title": "Votre partenaire du nettoyage professionnel.",
-    "about.desc": "Naoussi Services est spécialisée dans le nettoyage professionnel et industriel, offrant des prestations impeccables adaptées aux particuliers comme aux entreprises. De l’entretien intérieur à la désinfection, en passant par la dératisation, notre équipe vous garantit un service rigoureux, fiable et sur mesure.",
+    "about.desc": "Global cleaning services est spécialisée dans le nettoyage professionnel et industriel, offrant des prestations impeccables adaptées aux particuliers comme aux entreprises. De l’entretien intérieur à la désinfection, en passant par la dératisation, notre équipe vous garantit un service rigoureux, fiable et sur mesure.",
     "about.feature1.title": "Équipe qualifiée & fiable",
     "about.feature1.desc": "Des professionnels formés pour garantir un résultat irréprochable.",
     "about.feature2.title": "Méthodes & produits responsables",
@@ -62,7 +62,7 @@
     "about.experience": "Années d'expérience",
     "identity.tag": "Notre identité",
     "identity.title": "Vision, Mission & Valeurs",
-    "identity.desc": "Découvrez ce qui nous motive au quotidien et la philosophie qui guide Naoussi Services pour offrir une qualité irréprochable et une expérience client exceptionnelle.",
+    "identity.desc": "Découvrez ce qui nous motive au quotidien et la philosophie qui guide Global cleaning services pour offrir une qualité irréprochable et une expérience client exceptionnelle.",
     "identity.vision.title": "Notre Vision",
     "identity.vision.desc": "Devenir la référence du nettoyage professionnel au Cameroun, en imposant un standard d’excellence où chaque espace reflète la propreté, la sécurité et le bien-être.",
     "identity.mission.title": "Notre Mission",
@@ -71,7 +71,7 @@
     "identity.values.desc": "Professionnalisme, intégrité, respect de l’environnement et engagement total envers la satisfaction de notre clientèle.",
     "clean.tag": "Nos Services",
     "clean.title": "Des Solutions de Nettoyage Professionnelles",
-    "clean.desc": "Naoussi Services, basée à Douala, offre des prestations de nettoyage professionnel et industriel pour particuliers et entreprises. De l’entretien quotidien à la désinfection complète, notre équipe qualifiée garantit des résultats impeccables et un environnement sain.",
+    "clean.desc": "Global cleaning services, basée à Douala, offre des prestations de nettoyage professionnel et industriel pour particuliers et entreprises. De l’entretien quotidien à la désinfection complète, notre équipe qualifiée garantit des résultats impeccables et un environnement sain.",
     "clean.service1.title": "Nettoyage Résidentiel",
     "clean.service1.desc": "Assurez un intérieur impeccable grâce à nos prestations de nettoyage sur mesure pour votre domicile.",
     "clean.service2.title": "Nettoyage Commercial",
@@ -190,7 +190,7 @@
     },
     "contactSection": {
         "title": "Contactez-nous",
-        "description": "Vous avez une question ou une suggestion concernant <strong>Naoussi Service</strong> ? Remplissez le formulaire ci-dessous et nous vous répondrons rapidement.",
+        "description": "Vous avez une question ou une suggestion concernant Global cleaning services ? Remplissez le formulaire ci-dessous et nous vous répondrons rapidement.",
         "form": {
             "name": "Votre nom",
             "email": "Adresse e-mail",
@@ -201,25 +201,24 @@
         },
         "location": {
             "title": "Localisation",
-            "address": "Rue Drouot, Akwa - Douala\nFace Collège Emilie Saker Akwa"
+            "address": "Bonaberi - douala - cameroun Bonaberi 4 étages"
         },
         "phone": {
             "title": "Téléphone",
             "numbers": [
-                "657705433",
-                "233426745",
-                "653576710"
+                "678894843",
+                "656315965"
             ]
         },
         "hours": {
             "title": "Horaires",
-            "schedule": "Lundi à vendredi : 07h à 17h"
+            "schedule": "Lundi à vendredi de 09h à 18h Samedi de 09h à 14h"
         }
     },
     "footer": {
-        "logoAlt": "Naoussi Services",
+        "logoAlt": "Global cleaning services",
         "about": {
-            "description": "Naoussi Services est une société de nettoyage professionnel et industriel située à Douala. Nous accompagnons autant les clients particuliers que les clients professionnels pour des prestations de qualité.",
+            "description": "Global cleaning services est une société de nettoyage professionnel et industriel située à Douala. Nous accompagnons autant les clients particuliers que les clients professionnels pour des prestations de qualité.",
             "followUs": "Suivez-nous"
         },
         "quickLinksTitle": "Liens rapides",
@@ -255,14 +254,13 @@
             "button": "S'inscrire"
         },
         "contactInfo": {
-            "address": "Rue Drouot, Akwa - Douala, Face Collège Emilie Saker",
+            "address": "Bonaberi - douala - cameroun Bonaberi 4 étages",
             "phone": [
-                "657705433",
-                "233426745",
-                "653576710"
+                "656315965",
+                "678894843"
             ],
-            "hours": "Lundi à vendredi : 07h à 17h",
-            "email": "info@naoussiservice.com"
+            "hours": "Lundi à vendredi de 09h à 18h Samedi de 09h à 14h",
+            "email": "info@GLOBALCLEANINGSERVICES.com"
         },
         "bottomLinks": [
             {
@@ -283,9 +281,9 @@
         }
     },
     "mapCard": {
-        "name": "Naoussi Service",
-        "addressLine1": "Rue Drouot, Akwa - Douala",
-        "addressLine2": "Face Collège Emilie Saker",
+        "name": "Global cleaning services",
+        "addressLine1": "Bonaberi - douala - cameroun Bonaberi 4 étages",
+        "addressLine2": "Bonaberi 4 étages",
         "rating": "4,5",
         "reviews": "192 avis",
         "directions": "Itinéraires",

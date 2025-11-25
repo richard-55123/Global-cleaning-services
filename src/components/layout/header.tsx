@@ -123,7 +123,7 @@ export default function Header() {
                             </div>
                             <div className="min-w-0">
                                 <p className="font-semibold text-neutral-900 text-sm sm:text-base">{t("phone")}</p>
-                                <p className="text-neutral-600 text-xs sm:text-sm">657705433 / 233426745 / 653576710</p>
+                                <p className="text-neutral-600 text-xs sm:text-sm">678894843 / 656315965</p>
                             </div>
                         </div>
 
@@ -134,7 +134,7 @@ export default function Header() {
                             </div>
                             <div className="min-w-0">
                                 <p className="font-semibold text-neutral-900 text-sm sm:text-base">{t("location")}</p>
-                                <p className="text-neutral-600 text-xs sm:text-sm">Rue Drouot, Akwa - Douala</p>
+                                <p className="text-neutral-600 text-xs sm:text-sm">Bonaberi - douala - cameroun Bonaberi 4 étages</p>
                             </div>
                         </div>
 
@@ -145,7 +145,7 @@ export default function Header() {
                             </div>
                             <div className="min-w-0">
                                 <p className="font-semibold text-neutral-900 text-sm sm:text-base">{t("hours")}</p>
-                                <p className="text-neutral-600 text-xs sm:text-sm">Lun - Ven : 07h à 17h</p>
+                                <p className="text-neutral-600 text-xs sm:text-sm">Lundi-vendredi: 09h - 18h Samedi: 09h - 14h</p>
                             </div>
                         </div>
 
@@ -163,7 +163,7 @@ export default function Header() {
                             </div>
                             <div className="min-w-0">
                                 <p className="font-semibold text-neutral-900 text-sm sm:text-base">{t("phone")}</p>
-                                <p className="text-neutral-600 text-xs sm:text-sm">657705433 / 233426745 / 653576710</p>
+                                <p className="text-neutral-600 text-xs sm:text-sm">678894843 / 656315965</p>
                             </div>
                         </div>
 
@@ -173,7 +173,7 @@ export default function Header() {
                             </div>
                             <div className="min-w-0">
                                 <p className="font-semibold text-neutral-900 text-sm sm:text-base">{t("location")}</p>
-                                <p className="text-neutral-600 text-xs sm:text-sm">Rue Drouot, Akwa - Douala</p>
+                                <p className="text-neutral-600 text-xs sm:text-sm">Bonaberi - douala - cameroun Bonaberi 4 étages</p>
                             </div>
                         </div>
                     </div>
@@ -198,7 +198,7 @@ export default function Header() {
                             <div className="absolute inset-0 border-2 border-primary rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </div>
                         <h1 className="text-2xl sm:text-4xl font-extrabold text-primary tracking-wide group-hover:scale-105 transition-transform duration-300">
-                            N<span className="text-secondary">S</span>
+                            GC<span className="text-secondary">S</span>
                         </h1>
                     </div>
 
@@ -219,7 +219,9 @@ export default function Header() {
                         </ul>
 
                         <a
-                            href="#booking"
+                            href="https://wa.me/33656315965"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="bg-primary/90 text-white py-3 px-8 rounded-full shadow-lg font-semibold transition-all duration-300 scale-105 shadow-xl active:scale-95 group relative overflow-hidden"
                         >
                             <span className="relative z-10 flex items-center gap-2">
@@ -261,7 +263,7 @@ export default function Header() {
                         }`} style={{ marginTop: 'calc(100px + 1px)' }}>
                         <div className="px-[10%] py-6 max-h-[calc(100vh-100px)] overflow-y-auto">
                             <ul className="flex flex-col gap-2">
-                                {["home", "about", "services", "produits", "portfolio", "contact"].map((item) => (
+                                {["home", "about", "services", "produits", "contact"].map((item) => (
                                     <li key={item}>
                                         <a
                                             href={`#${item}`}
@@ -276,7 +278,9 @@ export default function Header() {
 
                                 <li className="mt-4 pt-4 border-t border-gray-100">
                                     <a
-                                        href="#booking"
+                                        href="https://wa.me/33656315965"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-white py-4 px-6 rounded-xl shadow-lg font-semibold transition-all duration-300 active:scale-95 text-center"
                                         onClick={handleNavClick}
                                     >

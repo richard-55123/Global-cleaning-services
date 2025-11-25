@@ -106,7 +106,7 @@ export default function AboutNaoussi() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-white shadow-xl border border-primary/20 rounded-2xl px-10 py-6 text-center"
                     >
-                        <h2 className="text-3xl font-bold text-primary">25+</h2>
+                        <h2 className="text-3xl font-bold text-primary">7+</h2>
                         <p className="text-black/70 font-medium text-sm">
                             {t("about.experience")}
                         </p>

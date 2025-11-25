@@ -1,5 +1,5 @@
 import React from "react";
-import { Facebook, Instagram} from "lucide-react";
+import { Facebook } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 type Link = { name: string; href: string };
@@ -11,8 +11,8 @@ const Footer: React.FC = () => {
     // Récupération des données depuis la traduction
     const aboutDescription: string = t("footer.about.description");
     const socialLinks: SocialLink[] = [
-        { href: "https://www.facebook.com/naoussii", icon: <Facebook size={20} /> },
-        { href: "https://www.instagram.com/naoussi.services.official/", icon: <Instagram size={20} /> },
+        { href: "https://maligah.com/entreprises/details/Global%20cleaning%20services", icon: <Facebook size={20} /> },
+        // { href: "https://www.instagram.com/naoussi.services.official/", icon: <Instagram size={20} /> },
         // { href: "#", icon: <Linkedin size={20} /> },
         // { href: "#", icon: <Twitter size={20} /> },
     ];
@@ -114,7 +114,7 @@ const Footer: React.FC = () => {
             <div className="bg-fcc-blue text-white py-3">
                 <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
                     <p className="text-sm text-center md:text-left">
-                        © 2025 Naoussi Services. Tous droits réservés. <br className="md:hidden" />
+                        © 2025 Global cleaning services. Tous droits réservés. <br className="md:hidden" />
                         <span className="block md:inline text-center">
                             {t("footer.bottom.poweredBy")}{" "}
                             <a
