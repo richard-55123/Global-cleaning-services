@@ -1,0 +1,294 @@
+{
+    "phone": "Phone",
+    "fax": "Fax",
+    "location": "Location",
+    "po_box": "P.O. Box",
+    "service_area": "Service Areas",
+    "hours": "Hours",
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "produits": "Products",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "book_now": "BOOK NOW",
+    "hero": {
+        "professional_cleaning": {
+            "title": "PROFESSIONAL CLEANING",
+            "text": "Naoussi Services is a professional and industrial cleaning company based in Douala. We serve both individuals and businesses with high-quality services.",
+            "button": "Discover our services"
+        },
+        "maintenance_disinfection": {
+            "title": "MAINTENANCE & DISINFECTION",
+            "text": "From regular interior and exterior cleaning to disinfection and pest control, we provide professional teams for impeccable results.",
+            "button": "Learn more"
+        },
+        "for_clients_businesses": {
+            "title": "SERVICES FOR INDIVIDUALS & BUSINESSES",
+            "text": "Whether you are an individual or a business, Naoussi Services adapts to your needs and supports all your cleaning requirements efficiently and professionally.",
+            "button": "Contact us"
+        }
+    },
+    "howItWorks": {
+        "subtitle": "How it Works",
+        "title": "Naoussi Services Cleaning Journey",
+        "description": "Naoussi Services provides professional and industrial cleaning solutions tailored to your needs, for both private and business clients.",
+        "steps": [
+            {
+                "title": "Schedule Your Cleaning",
+                "description": "Choose the service that fits your needs and schedule easily online or by phone. Fast and simple."
+            },
+            {
+                "title": "Punctual and Reliable Service",
+                "description": "Our professional teams arrive on time, fully equipped to ensure a complete and efficient cleaning."
+            },
+            {
+                "title": "Spotless Results",
+                "description": "We guarantee a clean, disinfected, and pleasant space for your home or business premises."
+            }
+        ],
+        "cta": "Ready to transform your space? Trust Naoussi Services for fast, reliable, and professional cleaning. Contact us today for a personalized quote.",
+        "button": "Contact Us"
+    },
+    "about.titleTag": "About Naoussi Services",
+    "about.title": "Your partner in professional cleaning.",
+    "about.desc": "Naoussi Services specializes in professional and industrial cleaning, offering impeccable services for both individuals and businesses. From interior maintenance to disinfection and pest control, our team guarantees rigorous, reliable, and tailor-made service.",
+    "about.feature1.title": "Qualified & reliable team",
+    "about.feature1.desc": "Professionals trained to ensure flawless results.",
+    "about.feature2.title": "Responsible methods & products",
+    "about.feature2.desc": "Thoughtful cleaning that respects your space and the environment.",
+    "about.text2": "Whether you need occasional cleaning or regular maintenance, our team adapts to your needs to offer you a clean, healthy, and pleasant environment every day.",
+    "about.cta": "LEARN MORE →",
+    "about.experience": "Years of experience",
+    "identity.tag": "Our Identity",
+    "identity.title": "Vision, Mission & Values",
+    "identity.desc": "Discover what drives us every day and the philosophy that guides Naoussi Services to provide impeccable quality and an exceptional customer experience.",
+    "identity.vision.title": "Our Vision",
+    "identity.vision.desc": "Become the benchmark for professional cleaning in Cameroon, setting a standard of excellence where every space reflects cleanliness, safety, and well-being.",
+    "identity.mission.title": "Our Mission",
+    "identity.mission.desc": "Provide reliable, meticulous, and innovative cleaning services through a qualified team and responsible methods tailored to each client's needs.",
+    "identity.values.title": "Our Values",
+    "identity.values.desc": "Professionalism, integrity, respect for the environment, and full commitment to customer satisfaction.",
+    "clean.tag": "Our Services",
+    "clean.title": "Professional Cleaning Solutions",
+    "clean.desc": "Naoussi Services, based in Douala, provides professional and industrial cleaning services for individuals and businesses. From daily maintenance to complete disinfection, our qualified team guarantees impeccable results and a healthy environment.",
+    "clean.service1.title": "Residential Cleaning",
+    "clean.service1.desc": "Keep your home spotless with our personalized cleaning services.",
+    "clean.service2.title": "Commercial Cleaning",
+    "clean.service2.desc": "Maintain a clean and welcoming workplace for your offices and commercial areas.",
+    "clean.service3.title": "Industrial & Construction Cleaning",
+    "clean.service3.desc": "Robust solutions for industrial sites and construction areas, ensuring efficient and safe cleaning.",
+    "clean.service4.title": "Eco-Friendly Cleaning",
+    "clean.service4.desc": "Non-toxic and environmentally friendly products for a clean and healthy space.",
+    "clean.service5.title": "Disinfection & Pest Control",
+    "clean.service5.desc": "Protect your spaces with our professional disinfection and pest control services.",
+    "clean.text2": "We are committed to delivering quality service, combining efficiency, professionalism, and respect for the environment. Each intervention is adapted to your needs to ensure a clean, healthy, and welcoming space.",
+    "clean.cta": "LEARN MORE →",
+    "cleaningPage": {
+        "header": {
+            "subtitle": "Sparkling Homes and Offices",
+            "title": "Professionally clean homes, every single time!"
+        },
+        "services": [
+            {
+                "title": "Professional Cleaning",
+                "description": "Services tailored to the needs of individuals and businesses.",
+                "image": "/images/pro.png"
+            },
+            {
+                "title": "Industrial Cleaning",
+                "description": "Cleaning solutions for industrial environments and factories.",
+                "image": "/images/indu.png"
+            },
+            {
+                "title": "Sale of Cleaning Products",
+                "description": "Distribution of professional products for all your cleaning needs.",
+                "image": "/images/vente.png"
+            },
+            {
+                "title": "Home Cleaning",
+                "description": "Regular cleaning services for homes and residences.",
+                "image": "/images/r5.png"
+            },
+            {
+                "title": "Office Cleaning",
+                "description": "Daily or periodic maintenance of professional spaces.",
+                "image": "/images/bureau.png"
+            },
+            {
+                "title": "Disinfection",
+                "description": "Professional treatments against viruses and bacteria.",
+                "image": "/images/de.png"
+            },
+            {
+                "title": "Rodent Control",
+                "description": "Professional elimination of rodents and pests.",
+                "image": "/images/dera.png"
+            },
+            {
+                "title": "Insect Control",
+                "description": "Treatment against all types of harmful insects.",
+                "image": "/images/desin.png"
+            },
+            {
+                "title": "Post-Construction Cleaning",
+                "description": "Complete cleaning after construction or renovation.",
+                "image": "/images/ca.png"
+            },
+            {
+                "title": "Window and Floor Care",
+                "description": "Professional cleaning of glass surfaces and flooring.",
+                "image": "/images/vitre.png"
+            },
+            {
+                "title": "Green Space Maintenance",
+                "description": "Mowing, trimming, and maintenance of gardens and outdoor areas.",
+                "image": "/images/vert.png"
+            }
+        ]
+    },
+    "productsSection": {
+        "header": "Sale of Cleaning Products",
+        "title": {
+            "part1": "Quality products for",
+            "highlight": "your cleanliness"
+        },
+        "paragraphs": [
+            "We offer a complete range of cleaning products to ensure the hygiene and cleanliness of your spaces.",
+            "Our selection includes cleaning gels, scrubbing creams, bleach gels, and other high-quality cleaners.",
+            "We work with well-known brands such as Domestos, AKS, CIF, Maratem, and Mr Bee."
+        ],
+        "products": [
+            {
+                "id": 1,
+                "text": "Cleaning Gel"
+            },
+            {
+                "id": 2,
+                "text": "Scrubbing Cream"
+            },
+            {
+                "id": 3,
+                "text": "Bleach Gel"
+            },
+            {
+                "id": 4,
+                "text": "Cleaner"
+            },
+            {
+                "id": 5,
+                "text": "Brands: Domestos, AKS, CIF, Maratem, Mr Bee"
+            }
+        ],
+        "imageAlt": "Cleaning products - Gel, cream, cleaner",
+        "brandsImageAlt": "Brands of cleaning products",
+        "satisfiedClients": {
+            "number": "50+",
+            "text": "Satisfied clients"
+        },
+        "button": "Learn more"
+    },
+    "contactSection": {
+        "title": "Contact Us",
+        "description": "Do you have a question or suggestion regarding <strong>Naoussi Service</strong>? Fill out the form below and we will respond quickly.",
+        "form": {
+            "name": "Your Name",
+            "email": "Email Address",
+            "phone": "Phone Number",
+            "website": "Your Website (optional)",
+            "message": "Your Message",
+            "submit": "Send Message"
+        },
+        "location": {
+            "title": "Location",
+            "address": "Rue Drouot, Akwa - Douala\nOpposite Emilie Saker College, Akwa"
+        },
+        "phone": {
+            "title": "Phone",
+            "numbers": [
+                "657705433",
+                "233426745",
+                "653576710"
+            ]
+        },
+        "hours": {
+            "title": "Hours",
+            "schedule": "Monday to Friday: 07:00 - 17:00"
+        }
+    },
+    "footer": {
+        "logoAlt": "Naoussi Services",
+        "about": {
+            "description": "Naoussi Services is a professional and industrial cleaning company based in Douala. We serve both individual and corporate clients with high-quality services.",
+            "followUs": "Follow us"
+        },
+        "quickLinksTitle": "Quick Links",
+        "quickLinks": [
+            {
+                "name": "Home",
+                "href": "/"
+            },
+            {
+                "name": "Services",
+                "href": "#services"
+            },
+            {
+                "name": "About",
+                "href": "#about"
+            },
+            {
+                "name": "Contact",
+                "href": "#contact"
+            }
+        ],
+        "contact": {
+            "title": "Contact Us",
+            "address": "Address",
+            "phone": "Phone",
+            "email": "Email",
+            "hours": "Hours"
+        },
+        "newsletter": {
+            "title": "Stay Updated",
+            "description": "Subscribe to our newsletter to receive tips and special offers.",
+            "placeholder": "Your email",
+            "button": "Subscribe"
+        },
+        "contactInfo": {
+            "address": "Rue Drouot, Akwa - Douala, Opposite Emilie Saker College",
+            "phone": [
+                "657705433",
+                "233426745",
+                "653576710"
+            ],
+            "hours": "Monday to Friday: 07:00 - 17:00",
+            "email": "info@naoussiservice.com"
+        },
+        "bottomLinks": [
+            {
+                "name": "About",
+                "href": "#about"
+            },
+            {
+                "name": "Privacy Policy",
+                "href": "#"
+            },
+            {
+                "name": "Services",
+                "href": "#services"
+            }
+        ],
+        "bottom": {
+            "poweredBy": "Powered by"
+        }
+    },
+    "mapCard": {
+        "name": "Naoussi Service",
+        "addressLine1": "Rue Drouot, Akwa - Douala",
+        "addressLine2": "Opposite Emilie Saker College",
+        "rating": "4.5",
+        "reviews": "192 reviews",
+        "directions": "Directions",
+        "viewLarger": "View larger map"
+    }
+}

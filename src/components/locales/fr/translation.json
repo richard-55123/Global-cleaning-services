@@ -1,0 +1,294 @@
+{
+    "phone": "Téléphone",
+    "fax": "Fax",
+    "location": "Localisation",
+    "po_box": "Boîte postale",
+    "service_area": "Zones d'intervention",
+    "hours": "Horaires",
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "produits": "Produits",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "book_now": "RÉSERVEZ MAINTENANT",
+    "hero": {
+        "professional_cleaning": {
+            "title": "NETTOYAGE PROFESSIONNEL",
+            "text": "Naoussi Services est une société de nettoyage professionnel et industriel située à Douala. Nous prenons en charge les particuliers et les entreprises pour des prestations de qualité.",
+            "button": "Découvrir nos services"
+        },
+        "maintenance_disinfection": {
+            "title": "ENTRETIEN ET DÉSINFECTION",
+            "text": "De l’entretien courant intérieur et extérieur à la désinfection et dératisation, nous mettons à votre disposition des équipes professionnelles et expérimentées pour un résultat impeccable.",
+            "button": "En savoir plus"
+        },
+        "for_clients_businesses": {
+            "title": "SERVICES POUR PARTICULIERS ET ENTREPRISES",
+            "text": "Que vous soyez un particulier ou un professionnel, Naoussi Services s’adapte à vos besoins et vous accompagne dans toutes vos demandes de nettoyage avec sérieux et efficacité.",
+            "button": "Contactez-nous"
+        }
+    },
+    "howItWorks": {
+        "subtitle": "Comment ça marche",
+        "title": "Le parcours de nettoyage Naoussi Services",
+        "description": "Naoussi Services propose des solutions de nettoyage professionnelles et industrielles, adaptées à vos besoins, que vous soyez particulier ou entreprise.",
+        "steps": [
+            {
+                "title": "Planifiez votre nettoyage",
+                "description": "Choisissez le service adapté à vos besoins et planifiez facilement en ligne ou par téléphone. Rapidité et simplicité garanties."
+            },
+            {
+                "title": "Intervention ponctuelle et fiable",
+                "description": "Nos équipes professionnelles arrivent à l’heure, pleinement équipées pour assurer un nettoyage complet et efficace."
+            },
+            {
+                "title": "Résultats impeccables",
+                "description": "Nous garantissons un espace propre, désinfecté et agréable, que ce soit pour votre domicile ou vos locaux professionnels."
+            }
+        ],
+        "cta": "Prêt à transformer votre espace ? Faites confiance à Naoussi Services pour un nettoyage rapide, fiable et professionnel. Contactez-nous dès aujourd'hui pour un devis personnalisé.",
+        "button": "Contactez-Nous"
+    },
+    "about.titleTag": "À propos de Naoussi Services",
+    "about.title": "Votre partenaire du nettoyage professionnel.",
+    "about.desc": "Naoussi Services est spécialisée dans le nettoyage professionnel et industriel, offrant des prestations impeccables adaptées aux particuliers comme aux entreprises. De l’entretien intérieur à la désinfection, en passant par la dératisation, notre équipe vous garantit un service rigoureux, fiable et sur mesure.",
+    "about.feature1.title": "Équipe qualifiée & fiable",
+    "about.feature1.desc": "Des professionnels formés pour garantir un résultat irréprochable.",
+    "about.feature2.title": "Méthodes & produits responsables",
+    "about.feature2.desc": "Un nettoyage réfléchi qui respecte votre espace et l’environnement.",
+    "about.text2": "Que vous ayez besoin d’un nettoyage ponctuel ou d’un entretien régulier, notre équipe s’adapte à vos besoins pour vous offrir un cadre propre, sain et agréable au quotidien.",
+    "about.cta": "EN SAVOIR PLUS →",
+    "about.experience": "Années d'expérience",
+    "identity.tag": "Notre identité",
+    "identity.title": "Vision, Mission & Valeurs",
+    "identity.desc": "Découvrez ce qui nous motive au quotidien et la philosophie qui guide Naoussi Services pour offrir une qualité irréprochable et une expérience client exceptionnelle.",
+    "identity.vision.title": "Notre Vision",
+    "identity.vision.desc": "Devenir la référence du nettoyage professionnel au Cameroun, en imposant un standard d’excellence où chaque espace reflète la propreté, la sécurité et le bien-être.",
+    "identity.mission.title": "Notre Mission",
+    "identity.mission.desc": "Offrir un service de nettoyage fiable, minutieux et innovant grâce à une équipe qualifiée et des méthodes responsables, adaptées à chaque besoin de nos clients.",
+    "identity.values.title": "Nos Valeurs",
+    "identity.values.desc": "Professionnalisme, intégrité, respect de l’environnement et engagement total envers la satisfaction de notre clientèle.",
+    "clean.tag": "Nos Services",
+    "clean.title": "Des Solutions de Nettoyage Professionnelles",
+    "clean.desc": "Naoussi Services, basée à Douala, offre des prestations de nettoyage professionnel et industriel pour particuliers et entreprises. De l’entretien quotidien à la désinfection complète, notre équipe qualifiée garantit des résultats impeccables et un environnement sain.",
+    "clean.service1.title": "Nettoyage Résidentiel",
+    "clean.service1.desc": "Assurez un intérieur impeccable grâce à nos prestations de nettoyage sur mesure pour votre domicile.",
+    "clean.service2.title": "Nettoyage Commercial",
+    "clean.service2.desc": "Maintenez un environnement professionnel sain et accueillant pour vos bureaux et espaces commerciaux.",
+    "clean.service3.title": "Nettoyage Industriel & Chantiers",
+    "clean.service3.desc": "Des solutions robustes pour les sites industriels et les chantiers, avec un nettoyage efficace et sécurisé.",
+    "clean.service4.title": "Nettoyage Écologique",
+    "clean.service4.desc": "Des produits non toxiques et respectueux de l'environnement pour un espace propre et sain.",
+    "clean.service5.title": "Désinfection et Dératisation",
+    "clean.service5.desc": "Protégez vos espaces grâce à nos services de désinfection professionnelle et de lutte contre les nuisibles.",
+    "clean.text2": "Nous nous engageons à fournir un service de qualité, alliant efficacité, professionnalisme et respect de l’environnement. Chaque intervention est adaptée à vos besoins pour garantir un espace propre, sain et accueillant.",
+    "clean.cta": "EN SAVOIR PLUS →",
+    "cleaningPage": {
+        "header": {
+            "subtitle": "Maisons et bureaux étincelants",
+            "title": "Des maisons étincelantes de propreté, à chaque fois !"
+        },
+        "services": [
+            {
+                "title": "Nettoyage Professionnel",
+                "description": "Services adaptés aux besoins des particuliers et entreprises.",
+                "image": "/images/pro.png"
+            },
+            {
+                "title": "Nettoyage Industriel",
+                "description": "Solutions de nettoyage pour environnements industriels et usines.",
+                "image": "/images/indu.png"
+            },
+            {
+                "title": "Vente de Produits d'Entretien",
+                "description": "Distribution de produits professionnels pour tous vos besoins de nettoyage.",
+                "image": "/images/vente.png"
+            },
+            {
+                "title": "Ménage à Domicile",
+                "description": "Services de ménage régulier pour particuliers et résidences.",
+                "image": "/images/r5.png"
+            },
+            {
+                "title": "Nettoyage de Bureaux",
+                "description": "Entretien quotidien ou périodique des espaces professionnels.",
+                "image": "/images/bureau.png"
+            },
+            {
+                "title": "Désinfection",
+                "description": "Traitements professionnels contre virus et bactéries.",
+                "image": "/images/de.png"
+            },
+            {
+                "title": "Dératisation",
+                "description": "Élimination professionnelle des rongeurs et nuisibles.",
+                "image": "/images/dera.png"
+            },
+            {
+                "title": "Désinsectisation",
+                "description": "Traitement contre tous types d'insectes nuisibles.",
+                "image": "/images/desin.png"
+            },
+            {
+                "title": "Nettoyage de Chantiers",
+                "description": "Nettoyage complet après travaux et rénovation.",
+                "image": "/images/ca.png"
+            },
+            {
+                "title": "Entretien des Vitres et Sols",
+                "description": "Nettoyage professionnel des surfaces vitrées et revêtements de sol.",
+                "image": "/images/vitre.png"
+            },
+            {
+                "title": "Entretien des Espaces Verts",
+                "description": "Tonte, taille et entretien des zones extérieures et jardins.",
+                "image": "/images/vert.png"
+            }
+        ]
+    },
+    "productsSection": {
+        "header": "Vente de Produits d'Entretien",
+        "title": {
+            "part1": "Produits de qualité pour",
+            "highlight": "votre propreté"
+        },
+        "paragraphs": [
+            "Nous proposons une gamme complète de produits d’entretien pour assurer la propreté et l’hygiène de vos espaces.",
+            "Notre sélection comprend des gels nettoyants, crèmes à récurer, gels javel et autres nettoyants de haute qualité.",
+            "Nous travaillons avec des marques reconnues telles que Domestos, AKS, CIF, Maratem et Mr Bee."
+        ],
+        "products": [
+            {
+                "id": 1,
+                "text": "Gel nettoyant"
+            },
+            {
+                "id": 2,
+                "text": "Crème à récurer"
+            },
+            {
+                "id": 3,
+                "text": "Gel javel"
+            },
+            {
+                "id": 4,
+                "text": "Nettoyant"
+            },
+            {
+                "id": 5,
+                "text": "Marques : Domestos, AKS, CIF, Maratem, Mr Bee"
+            }
+        ],
+        "imageAlt": "Produits d'entretien - Gel, crème, nettoyant",
+        "brandsImageAlt": "Marques de produits d'entretien",
+        "satisfiedClients": {
+            "number": "50+",
+            "text": "Clients satisfaits"
+        },
+        "button": "En savoir plus"
+    },
+    "contactSection": {
+        "title": "Contactez-nous",
+        "description": "Vous avez une question ou une suggestion concernant <strong>Naoussi Service</strong> ? Remplissez le formulaire ci-dessous et nous vous répondrons rapidement.",
+        "form": {
+            "name": "Votre nom",
+            "email": "Adresse e-mail",
+            "phone": "Numéro de téléphone",
+            "website": "Votre site web (facultatif)",
+            "message": "Votre message",
+            "submit": "Envoyer le message"
+        },
+        "location": {
+            "title": "Localisation",
+            "address": "Rue Drouot, Akwa - Douala\nFace Collège Emilie Saker Akwa"
+        },
+        "phone": {
+            "title": "Téléphone",
+            "numbers": [
+                "657705433",
+                "233426745",
+                "653576710"
+            ]
+        },
+        "hours": {
+            "title": "Horaires",
+            "schedule": "Lundi à vendredi : 07h à 17h"
+        }
+    },
+    "footer": {
+        "logoAlt": "Naoussi Services",
+        "about": {
+            "description": "Naoussi Services est une société de nettoyage professionnel et industriel située à Douala. Nous accompagnons autant les clients particuliers que les clients professionnels pour des prestations de qualité.",
+            "followUs": "Suivez-nous"
+        },
+        "quickLinksTitle": "Liens rapides",
+        "quickLinks": [
+            {
+                "name": "Accueil",
+                "href": "/"
+            },
+            {
+                "name": "Services",
+                "href": "#services"
+            },
+            {
+                "name": "À propos",
+                "href": "#about"
+            },
+            {
+                "name": "Contact",
+                "href": "#contact"
+            }
+        ],
+        "contact": {
+            "title": "Contactez-nous",
+            "address": "Adresse",
+            "phone": "Téléphone",
+            "email": "Email",
+            "hours": "Horaires"
+        },
+        "newsletter": {
+            "title": "Restez informé",
+            "description": "Inscrivez-vous à notre newsletter pour recevoir des conseils et offres spéciales.",
+            "placeholder": "Votre email",
+            "button": "S'inscrire"
+        },
+        "contactInfo": {
+            "address": "Rue Drouot, Akwa - Douala, Face Collège Emilie Saker",
+            "phone": [
+                "657705433",
+                "233426745",
+                "653576710"
+            ],
+            "hours": "Lundi à vendredi : 07h à 17h",
+            "email": "info@naoussiservice.com"
+        },
+        "bottomLinks": [
+            {
+                "name": "À propos",
+                "href": "#about"
+            },
+            {
+                "name": "Politique de confidentialité",
+                "href": "#"
+            },
+            {
+                "name": "Services",
+                "href": "#services"
+            }
+        ],
+        "bottom": {
+            "poweredBy": "Powered by"
+        }
+    },
+    "mapCard": {
+        "name": "Naoussi Service",
+        "addressLine1": "Rue Drouot, Akwa - Douala",
+        "addressLine2": "Face Collège Emilie Saker",
+        "rating": "4,5",
+        "reviews": "192 avis",
+        "directions": "Itinéraires",
+        "viewLarger": "Agrandir le plan"
+    }
+}
