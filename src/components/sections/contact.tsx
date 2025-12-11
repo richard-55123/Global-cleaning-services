@@ -1,13 +1,13 @@
 import React from "react";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import backgroundImage from "/images/contact.png";
+import backgroundImage from "/images/in.png";
 import { useTranslation } from "react-i18next";
 
 const ContactSection: React.FC = () => {
     const { t } = useTranslation();
 
     // Récupérer les numéros de téléphone en tant que tableau de string
-    const phoneNumbers: string[] = t("contactSection.phone.numbers", { returnObjects: true }) as string[];
+    // const phoneNumbers: string[] = t("contactSection.phone.numbers", { returnObjects: true }) as string[];
 
     return (
         <section className="relative w-full py-12 px-[10%] bg-gray-50 overflow-hidden" id="contact">
@@ -79,9 +79,9 @@ const ContactSection: React.FC = () => {
                         </div>
                         <div>
                             <h3 className="text-[.9rem] md:text-[1.4rem] font-heading font-bold text-fcc-red">
-                                {t("contactSection.location.title")}
+                                {t("contactSectio.location.title")}
                             </h3>
-                            <p className="text-gray-600">{t("contactSection.location.address")}</p>
+                            <p className="text-gray-600">{t("contactSectio.location.address")}</p>
                         </div>
                     </div>
 
@@ -93,11 +93,11 @@ const ContactSection: React.FC = () => {
                         </div>
                         <div>
                             <h3 className="text-[.9rem] md:text-[1.4rem] font-heading font-bold text-fcc-red">
-                                {t("contactSection.phone.title")}
+                                {t("contactSectio.phone.title")}
                             </h3>
-                            {phoneNumbers.map((number, index) => (
-                                <p key={index} className="text-gray-600">{number}</p>
-                            ))}
+
+                            <p className="text-gray-600">{t("contactSectio.phone.numbers.0")}</p>
+
                         </div>
                     </div>
 
@@ -109,12 +109,13 @@ const ContactSection: React.FC = () => {
                         </div>
                         <div>
                             <h3 className="text-[.9rem] md:text-[1.4rem] font-heading font-bold text-fcc-red">
-                                {t("contactSection.hours.title")}
+                                {t("contactSectio.hours.title")}
                             </h3>
-                            <p className="text-gray-600">{t("contactSection.hours.schedule")}</p>
+                            <p className="text-gray-600">{t("contactSectio.hours.schedule")}</p>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
     );

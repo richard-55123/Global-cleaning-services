@@ -46,7 +46,7 @@ const CleanServices: React.FC = () => {
                 {/* Image */}
                 <div className="flex-1">
                     <img
-                        src="/images/r4.png"
+                        src="/images/service.png"
                         alt="Naoussi Services - Cleaning Service"
                         className="w-full h-auto rounded-lg shadow-lg"
                     />

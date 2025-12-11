@@ -28,7 +28,7 @@ export default function VisionMissionValues() {
         <section
             className="w-full bg-primary text-white py-20 px-[10%] bg-cover bg-center bg-no-repeat relative"
             style={{
-                backgroundImage: "url('/images/r5.png')",
+                backgroundImage: "url('/images/mission.png')",
             }}
         >
             {/* Overlay */}

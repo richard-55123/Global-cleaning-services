@@ -116,73 +116,50 @@ export default function Header() {
                         ref={contentRef}
                         className="flex items-center gap-8 min-w-max flex-1"
                     >
-                        {/* Téléphone */}
+                        {/* Message publicitaire 1 */}
                         <div className="flex items-center gap-3 group cursor-pointer flex-shrink-0 min-w-0">
                             <div className="border-2 rounded-lg p-2 border-primary bg-white group-hover:bg-primary group-hover:scale-110 transition-all duration-300 shadow-sm flex-shrink-0">
                                 <Phone className="w-4 h-4 text-primary group-hover:text-white" />
                             </div>
                             <div className="min-w-0">
-                                <p className="font-semibold text-neutral-900 text-sm sm:text-base">{t("phone")}</p>
-                                <p className="text-neutral-600 text-xs sm:text-sm">678894843 / 656315965</p>
+                                <p className="font-semibold text-neutral-900 text-sm sm:text-base">{t("contactSection.phone.title")}</p>
+                                <p className="text-neutral-600 text-xs sm:text-sm">{t("contactSectio.phone.numbers.0")}</p>
                             </div>
                         </div>
-
-                        {/* Localisation */}
-                        <div className="flex items-center gap-3 group cursor-pointer flex-shrink-0 min-w-0">
-                            <div className="border-2 rounded-lg p-2 border-primary bg-white group-hover:bg-primary group-hover:scale-110 transition-all duration-300 shadow-sm flex-shrink-0">
-                                <MapPin className="w-4 h-4 text-primary group-hover:text-white" />
-                            </div>
-                            <div className="min-w-0">
-                                <p className="font-semibold text-neutral-900 text-sm sm:text-base">{t("location")}</p>
-                                <p className="text-neutral-600 text-xs sm:text-sm">Bonaberi - douala - cameroun Bonaberi 4 étages</p>
-                            </div>
-                        </div>
-
-                        {/* Horaires */}
-                        <div className="flex items-center gap-3 group cursor-pointer flex-shrink-0 min-w-0">
-                            <div className="border-2 rounded-lg p-2 border-primary bg-white group-hover:bg-primary group-hover:scale-110 transition-all duration-300 shadow-sm flex-shrink-0">
-                                <Clock className="w-4 h-4 text-primary group-hover:text-white" />
-                            </div>
-                            <div className="min-w-0">
-                                <p className="font-semibold text-neutral-900 text-sm sm:text-base">{t("hours")}</p>
-                                <p className="text-neutral-600 text-xs sm:text-sm">Lundi-vendredi: 09h - 18h Samedi: 09h - 14h</p>
-                            </div>
-                        </div>
-
-                        {/* Language Switcher - Dupliqué pour le défilement continu */}
+                        {/* Language Switcher */}
                         <div className="flex items-center gap-3 group cursor-pointer flex-shrink-0 min-w-0">
                             <div className="flex-shrink-0">
                                 <LanguageSwitcher />
                             </div>
                         </div>
 
-                        {/* Éléments dupliqués pour un défilement infini fluide */}
-                        <div className="flex items-center gap-3 group cursor-pointer flex-shrink-0 min-w-0 opacity-60">
-                            <div className="border-2 rounded-lg p-2 border-primary bg-white flex-shrink-0">
-                                <Phone className="w-4 h-4 text-primary" />
+                        {/* Message publicitaire 2 */}
+                        <div className="flex items-center gap-3 group cursor-pointer flex-shrink-0 min-w-0">
+                            <div className="border-2 rounded-lg p-2 border-primary bg-white group-hover:bg-primary group-hover:scale-110 transition-all duration-300 shadow-sm flex-shrink-0">
+                                <MapPin className="w-4 h-4 text-primary group-hover:text-white" />
                             </div>
                             <div className="min-w-0">
-                                <p className="font-semibold text-neutral-900 text-sm sm:text-base">{t("phone")}</p>
-                                <p className="text-neutral-600 text-xs sm:text-sm">678894843 / 656315965</p>
+                                <p className="font-semibold text-neutral-900 text-sm sm:text-base">{t("contactSectio.location.title")}</p>
+                                <p className="text-neutral-600 text-xs sm:text-sm">{t("contactSectio.location.address")}</p>
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-3 group cursor-pointer flex-shrink-0 min-w-0 opacity-60">
-                            <div className="border-2 rounded-lg p-2 border-primary bg-white flex-shrink-0">
-                                <MapPin className="w-4 h-4 text-primary" />
+                        {/* Message publicitaire 3 */}
+                        <div className="flex items-center gap-3 group cursor-pointer flex-shrink-0 min-w-0">
+                            <div className="border-2 rounded-lg p-2 border-primary bg-white group-hover:bg-primary group-hover:scale-110 transition-all duration-300 shadow-sm flex-shrink-0">
+                                <Clock className="w-4 h-4 text-primary group-hover:text-white" />
                             </div>
                             <div className="min-w-0">
-                                <p className="font-semibold text-neutral-900 text-sm sm:text-base">{t("location")}</p>
-                                <p className="text-neutral-600 text-xs sm:text-sm">Bonaberi - douala - cameroun Bonaberi 4 étages</p>
+                                <p className="font-semibold text-neutral-900 text-sm sm:text-base">{t("contactSectio.hours.title")}</p>
+                                <p className="text-neutral-600 text-xs sm:text-sm">{t("contactSectio.hours.schedule")}</p>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
-
-                {/* Overlay de gradient pour indiquer le défilement */}
-                <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent pointer-events-none" />
-                <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent pointer-events-none" />
             </div>
+
 
             {/* ---------------- NAVBAR ---------------- */}
             <nav className="py-4 px-[10%] bg-white">
@@ -190,16 +167,16 @@ export default function Header() {
                     {/* LOGO avec animation */}
                     <div className="flex items-center gap-3 group cursor-pointer">
                         <div className="relative">
-                            {/* <img
-                                src="/logo.png"
+                            <img
+                                src="/images/logo.png"
                                 alt="Logo"
                                 className="w-12 sm:w-16 transition-transform duration-300 group-hover:scale-110"
-                            /> */}
-                            <div className="absolute inset-0 border-2 border-primary rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            />
+                            {/* <div className="absolute inset-0 border-2 border-primary rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" /> */}
                         </div>
-                        <h1 className="text-2xl sm:text-4xl font-extrabold text-primary tracking-wide group-hover:scale-105 transition-transform duration-300">
+                        {/* <h1 className="text-2xl sm:text-4xl font-extrabold text-primary tracking-wide group-hover:scale-105 transition-transform duration-300">
                             GC<span className="text-secondary">S</span>
-                        </h1>
+                        </h1> */}
                     </div>
 
                     {/* DESKTOP MENU */}
@@ -219,7 +196,7 @@ export default function Header() {
                         </ul>
 
                         <a
-                            href="https://wa.me/33656315965"
+                            href="#"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-primary/90 text-white py-3 px-8 rounded-full shadow-lg font-semibold transition-all duration-300 scale-105 shadow-xl active:scale-95 group relative overflow-hidden"
@@ -278,10 +255,10 @@ export default function Header() {
 
                                 <li className="mt-4 pt-4 border-t border-gray-100">
                                     <a
-                                        href="https://wa.me/33656315965"
+                                        href="#"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-white py-4 px-6 rounded-xl shadow-lg font-semibold transition-all duration-300 active:scale-95 text-center"
+                                        className="flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-secondary text-white py-4 px-6 rounded-full shadow-lg font-semibold transition-all duration-300 active:scale-95 text-center"
                                         onClick={handleNavClick}
                                     >
                                         {t("book_now")}

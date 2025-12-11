@@ -4,7 +4,7 @@ import CleanServices from "../components/sections/CleanServices"
 import ContactSection from "../components/sections/contact"
 import Hero from "../components/sections/hero"
 import HowItWorks from "../components/sections/HowItWorks"
-import MapCard from "../components/sections/map"
+import GlobalWorldMap from "../components/sections/map"
 import ProductsSection from "../components/sections/vente"
 import VisionMissionValues from "../components/sections/VisionMissionValues"
 
@@ -19,7 +19,7 @@ export const Home = () => {
             <CleaningServicesPage/>
             <ProductsSection/>
             <ContactSection/>
-            <MapCard/>
+            <GlobalWorldMap/>
         </>
     )
 }

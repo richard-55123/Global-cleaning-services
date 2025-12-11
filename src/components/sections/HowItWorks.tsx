@@ -23,7 +23,7 @@ const HowItWorks: React.FC = () => {
             icon: <CalendarCheck className="w-8 h-8 text-white" />,
             title: t("howItWorks.steps.0.title"),
             description: t("howItWorks.steps.0.description"),
-            image: "/images/r1.png",
+            image: "/images/plan.png",
             bg: "bg-white"
         },
         {
@@ -31,7 +31,7 @@ const HowItWorks: React.FC = () => {
             icon: <Clock className="w-8 h-8 text-white" />,
             title: t("howItWorks.steps.1.title"),
             description: t("howItWorks.steps.1.description"),
-            image: "/images/pic.png",
+            image: "/images/plann.png",
             bg: "bg-[#E0FFFC]"
         },
         {
@@ -39,7 +39,7 @@ const HowItWorks: React.FC = () => {
             icon: <ImMagicWand className="w-8 h-8 text-white" />,
             title: t("howItWorks.steps.2.title"),
             description: t("howItWorks.steps.2.description"),
-            image: "/images/r2.png",
+            image: "/images/result.png",
             bg: "bg-white"
         }
     ];

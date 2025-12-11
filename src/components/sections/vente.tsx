@@ -37,7 +37,7 @@ const ProductsSection: React.FC = () => {
                     <div className="relative w-full h-full flex justify-center items-center">
                         <div className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl">
                             <img
-                                src="/images/vente.png"
+                                src="/images/produit.png"
                                 alt={t("productsSection.imageAlt")}
                                 className="w-full h-auto rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-105"
                                 loading="lazy"
@@ -48,7 +48,7 @@ const ProductsSection: React.FC = () => {
                             <div className="absolute -bottom-6 -right-6 lg:-bottom-10 lg:-right-10 w-2/3 lg:w-3/5">
                                 <div className="relative">
                                     <img
-                                        src="/images/marque.png"
+                                        src="/images/product2.png"
                                         alt={t("productsSection.brandsImageAlt")}
                                         className="w-full h-auto rounded-xl shadow-2xl border-4 border-white transition-transform duration-300 hover:scale-105"
                                         loading="lazy"

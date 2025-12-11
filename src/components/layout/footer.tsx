@@ -1,29 +1,17 @@
 import React from "react";
-import { Facebook } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 type Link = { name: string; href: string };
-type SocialLink = { href: string; icon: React.ReactNode };
 
 const Footer: React.FC = () => {
     const { t } = useTranslation();
 
     // Récupération des données depuis la traduction
     const aboutDescription: string = t("footer.about.description");
-    const socialLinks: SocialLink[] = [
-        { href: "https://maligah.com/entreprises/details/Global%20cleaning%20services", icon: <Facebook size={20} /> },
-        // { href: "https://www.instagram.com/naoussi.services.official/", icon: <Instagram size={20} /> },
-        // { href: "#", icon: <Linkedin size={20} /> },
-        // { href: "#", icon: <Twitter size={20} /> },
-    ];
+
     const quickLinks: Link[] = t("footer.quickLinks", { returnObjects: true }) as Link[];
-    const bottomLinks: Link[] = t("footer.bottomLinks", { returnObjects: true }) as Link[];
-    const contactInfo = t("footer.contactInfo", { returnObjects: true }) as {
-        address: string;
-        phone: string[];
-        hours: string;
-        email: string;
-    };
+    // const bottomLinks: Link[] = t("footer.bottomLinks", { returnObjects: true }) as Link[];
+
 
     return (
         <footer className="bg-primary text-white">
@@ -34,22 +22,7 @@ const Footer: React.FC = () => {
                         <img src="/images/logo.png" alt={t("footer.logoAlt")} className="h-20 w-auto" />
                     </div>
                     <p className="text-gray-400 text-sm mb-4">{aboutDescription}</p>
-                    <h3 className="text-[.9rem] md:text-[1.4rem] font-heading font-bold mb-3">
-                        {t("footer.about.followUs")}
-                    </h3>
-                    <div className="flex gap-4 text-lg">
-                        {socialLinks.map((s, idx) => (
-                            <a
-                                key={idx}
-                                href={s.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-secondary transition"
-                            >
-                                {s.icon}
-                            </a>
-                        ))}
-                    </div>
+
                 </div>
 
                 {/* Liens rapides */}
@@ -71,20 +44,16 @@ const Footer: React.FC = () => {
                 {/* Contact */}
                 <div>
                     <h3 className="text-[.9rem] md:text-[1.4rem] font-heading font-bold mb-4">
-                        {t("footer.contact.title")}
+                        {t("contactSectio.location.title")}
                     </h3>
                     <p className="text-gray-300 text-sm mb-2">
-                        <strong>{t("footer.contact.address")}:</strong> {contactInfo.address}
+                        <strong>{t("contactSectio.location.title")}:</strong> {t("contactSectio.location.address")}
                     </p>
                     <p className="text-gray-300 text-sm mb-2">
-                        <strong>{t("footer.contact.phone")}:</strong>{" "}
-                        {contactInfo.phone.join(", ")}
+                        <strong>{t("contactSectio.phone.title")}:</strong> {t("contactSectio.phone.numbers.0")}
                     </p>
                     <p className="text-gray-300 text-sm mb-2">
-                        <strong>{t("footer.contact.email")}:</strong> {contactInfo.email}
-                    </p>
-                    <p className="text-gray-300 text-sm">
-                        <strong>{t("footer.contact.hours")}:</strong> {contactInfo.hours}
+                        <strong>{t("contactSectio.hours.title")}:</strong> {t("contactSectio.hours.schedule")}
                     </p>
                 </div>
 
@@ -114,26 +83,15 @@ const Footer: React.FC = () => {
             <div className="bg-fcc-blue text-white py-3">
                 <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
                     <p className="text-sm text-center md:text-left">
-                        © 2025 Global cleaning services. Tous droits réservés. <br className="md:hidden" />
-                        <span className="block md:inline text-center">
-                            {t("footer.bottom.poweredBy")}{" "}
-                            <a
-                                href="https://naoussi-services.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="font-semibold hover:underline"
-                            >
-                                HEMBA RICHARD
-                            </a>
-                        </span>
+                        © 2025 Global Investissement+. Tous droits réservés.
                     </p>
-                    <div className="flex gap-6 mt-2 md:mt-0">
+                    {/* <div className="flex gap-6 mt-2 md:mt-0">
                         {bottomLinks.map((link, idx) => (
                             <a key={idx} href={link.href} className="hover:underline text-[.95rem] md:text-[1.07rem]">
                                 {link.name}
                             </a>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </footer>

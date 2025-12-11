@@ -93,7 +93,7 @@ export default function AboutNaoussi() {
                     className="flex-1 relative flex justify-center"
                 >
                     <img
-                        src="/images/teamss.png"
+                        src="/images/g1.jpg"
                         alt="Agent de nettoyage Naoussi Services"
                         className="rounded-2xl w-full max-w-md object-cover shadow-xl"
                     />

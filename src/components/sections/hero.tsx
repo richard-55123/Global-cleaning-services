@@ -22,8 +22,8 @@ const slides: Slide[] = [
         id: 1,
         titleKey: "hero.professional_cleaning.title",
         textKey: "hero.professional_cleaning.text",
-        img: "/images/nettoyage.png",
-        bg: "/images/desinfection.png",
+        img: "/images/global.jpg",
+        bg: "/images/invest.png",
         layout: "left",
         button: {
             textKey: "hero.professional_cleaning.button",
@@ -34,8 +34,8 @@ const slides: Slide[] = [
         id: 2,
         titleKey: "hero.maintenance_disinfection.title",
         textKey: "hero.maintenance_disinfection.text",
-        img: "/images/seau.png",
-        bg: "/images/desinfection.png",
+        img: "/images/g2.png",
+        bg: "/images/invest.png",
         layout: "right",
         button: {
             textKey: "hero.maintenance_disinfection.button",
@@ -46,8 +46,8 @@ const slides: Slide[] = [
         id: 3,
         titleKey: "hero.for_clients_businesses.title",
         textKey: "hero.for_clients_businesses.text",
-        img: "/images/plein.png",
-        bg: "/images/desinfection.png",
+        img: "/images/g3.png",
+        bg: "/images/invest.png",
         layout: "left",
         button: {
             textKey: "hero.for_clients_businesses.button",

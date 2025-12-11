@@ -11,177 +11,147 @@
     "produits": "Produits",
     "portfolio": "Portfolio",
     "contact": "Contact",
-    "book_now": "RÉSERVEZ MAINTENANT",
+    "book_now": "Commencez à investir maintenant",
     "hero": {
         "professional_cleaning": {
-            "title": "NETTOYAGE PROFESSIONNEL",
-            "text": "Global cleaning services est une société de nettoyage professionnel et industriel située à Douala. Nous prenons en charge les particuliers et les entreprises pour des prestations de qualité.",
+            "title": "INVESTISSEMENT INTERNATIONAL",
+            "text": "Global Investissement+ est une société spécialisée dans les investissements internationaux, accompagnant particuliers et entreprises dans la croissance de leur capital à l'échelle mondiale.",
             "button": "Découvrir nos services"
         },
         "maintenance_disinfection": {
-            "title": "ENTRETIEN ET DÉSINFECTION",
-            "text": "De l’entretien courant intérieur et extérieur à la désinfection et dératisation, nous mettons à votre disposition des équipes professionnelles et expérimentées pour un résultat impeccable.",
+            "title": "STRATÉGIES FINANCIÈRES",
+            "text": "Nous proposons des solutions personnalisées pour optimiser vos investissements, incluant des conseils en diversification et gestion de portefeuille international.",
             "button": "En savoir plus"
         },
         "for_clients_businesses": {
-            "title": "SERVICES POUR PARTICULIERS ET ENTREPRISES",
-            "text": "Que vous soyez un particulier ou un professionnel, Global cleaning services s’adapte à vos besoins et vous accompagne dans toutes vos demandes de nettoyage avec sérieux et efficacité.",
+            "title": "POUR PARTICULIERS ET ENTREPRISES",
+            "text": "Que vous soyez un investisseur individuel ou une entreprise, Global Investissement+ vous accompagne pour maximiser vos opportunités à l’international avec expertise et fiabilité.",
             "button": "Contactez-nous"
         }
     },
     "howItWorks": {
         "subtitle": "Comment ça marche",
-        "title": "Le parcours de nettoyage Global cleaning services",
-        "description": "Global cleaning services propose des solutions de nettoyage professionnelles et industrielles, adaptées à vos besoins, que vous soyez particulier ou entreprise.",
+        "title": "Le parcours d'investissement Global Investissement+",
+        "description": "Global Investissement+ propose des solutions d’investissement sur mesure pour particuliers et entreprises, adaptées à vos besoins et objectifs financiers internationaux.",
         "steps": [
             {
-                "title": "Planifiez votre nettoyage",
-                "description": "Choisissez le service adapté à vos besoins et planifiez facilement en ligne ou par téléphone. Rapidité et simplicité garanties."
+                "title": "Planifiez votre investissement",
+                "description": "Choisissez les opportunités qui correspondent à vos objectifs et planifiez votre stratégie avec nos experts."
             },
             {
-                "title": "Intervention ponctuelle et fiable",
-                "description": "Nos équipes professionnelles arrivent à l’heure, pleinement équipées pour assurer un nettoyage complet et efficace."
+                "title": "Suivi professionnel et fiable",
+                "description": "Nos équipes spécialisées vous accompagnent à chaque étape pour garantir un investissement sûr et optimisé."
             },
             {
-                "title": "Résultats impeccables",
-                "description": "Nous garantissons un espace propre, désinfecté et agréable, que ce soit pour votre domicile ou vos locaux professionnels."
+                "title": "Résultats optimisés",
+                "description": "Nous visons à maximiser la rentabilité de vos investissements tout en minimisant les risques grâce à une expertise internationale."
             }
         ],
-        "cta": "Prêt à transformer votre espace ? Faites confiance à Global cleaning services pour un nettoyage rapide, fiable et professionnel. Contactez-nous dès aujourd'hui pour un devis personnalisé.",
+        "cta": "Prêt à développer votre capital ? Faites confiance à Global Investissement+ pour une gestion professionnelle et personnalisée. Contactez-nous dès aujourd'hui pour un accompagnement sur mesure.",
         "button": "Contactez-Nous"
     },
-    "about.titleTag": "À propos de Global cleaning services",
-    "about.title": "Votre partenaire du nettoyage professionnel.",
-    "about.desc": "Global cleaning services est spécialisée dans le nettoyage professionnel et industriel, offrant des prestations impeccables adaptées aux particuliers comme aux entreprises. De l’entretien intérieur à la désinfection, en passant par la dératisation, notre équipe vous garantit un service rigoureux, fiable et sur mesure.",
-    "about.feature1.title": "Équipe qualifiée & fiable",
-    "about.feature1.desc": "Des professionnels formés pour garantir un résultat irréprochable.",
-    "about.feature2.title": "Méthodes & produits responsables",
-    "about.feature2.desc": "Un nettoyage réfléchi qui respecte votre espace et l’environnement.",
-    "about.text2": "Que vous ayez besoin d’un nettoyage ponctuel ou d’un entretien régulier, notre équipe s’adapte à vos besoins pour vous offrir un cadre propre, sain et agréable au quotidien.",
+    "about.titleTag": "À propos de Global Investissement+",
+    "about.title": "Votre partenaire pour les investissements internationaux.",
+    "about.desc": "Global Investissement+ accompagne particuliers et entreprises dans leurs investissements internationaux, offrant des stratégies personnalisées et une expertise reconnue. De l’analyse de marché à la gestion de portefeuille, notre équipe vous garantit un service rigoureux, fiable et performant.",
+    "about.feature1.title": "Équipe experte & fiable",
+    "about.feature1.desc": "Des professionnels expérimentés pour garantir des investissements sûrs et performants.",
+    "about.feature2.title": "Stratégies responsables",
+    "about.feature2.desc": "Des méthodes d’investissement réfléchies respectant les standards internationaux et les bonnes pratiques financières.",
+    "about.text2": "Que vous recherchiez un investissement ponctuel ou un portefeuille diversifié, nous adaptons nos solutions pour maximiser vos résultats à l’international.",
     "about.cta": "EN SAVOIR PLUS →",
     "about.experience": "Années d'expérience",
     "identity.tag": "Notre identité",
     "identity.title": "Vision, Mission & Valeurs",
-    "identity.desc": "Découvrez ce qui nous motive au quotidien et la philosophie qui guide Global cleaning services pour offrir une qualité irréprochable et une expérience client exceptionnelle.",
+    "identity.desc": "Découvrez la philosophie qui guide Global Investissement+ pour offrir un accompagnement fiable, stratégique et orienté vers la réussite financière à l’échelle mondiale.",
     "identity.vision.title": "Notre Vision",
-    "identity.vision.desc": "Devenir la référence du nettoyage professionnel au Cameroun, en imposant un standard d’excellence où chaque espace reflète la propreté, la sécurité et le bien-être.",
+    "identity.vision.desc": "Devenir le partenaire de référence pour les investissements internationaux, offrant des solutions performantes et innovantes pour chaque investisseur.",
     "identity.mission.title": "Notre Mission",
-    "identity.mission.desc": "Offrir un service de nettoyage fiable, minutieux et innovant grâce à une équipe qualifiée et des méthodes responsables, adaptées à chaque besoin de nos clients.",
+    "identity.mission.desc": "Permettre à nos clients de développer leur capital à l’international grâce à une expertise solide, des conseils personnalisés et une approche stratégique.",
     "identity.values.title": "Nos Valeurs",
-    "identity.values.desc": "Professionnalisme, intégrité, respect de l’environnement et engagement total envers la satisfaction de notre clientèle.",
+    "identity.values.desc": "Excellence, intégrité, transparence et engagement total envers le succès financier de nos clients.",
     "clean.tag": "Nos Services",
-    "clean.title": "Des Solutions de Nettoyage Professionnelles",
-    "clean.desc": "Global cleaning services, basée à Douala, offre des prestations de nettoyage professionnel et industriel pour particuliers et entreprises. De l’entretien quotidien à la désinfection complète, notre équipe qualifiée garantit des résultats impeccables et un environnement sain.",
-    "clean.service1.title": "Nettoyage Résidentiel",
-    "clean.service1.desc": "Assurez un intérieur impeccable grâce à nos prestations de nettoyage sur mesure pour votre domicile.",
-    "clean.service2.title": "Nettoyage Commercial",
-    "clean.service2.desc": "Maintenez un environnement professionnel sain et accueillant pour vos bureaux et espaces commerciaux.",
-    "clean.service3.title": "Nettoyage Industriel & Chantiers",
-    "clean.service3.desc": "Des solutions robustes pour les sites industriels et les chantiers, avec un nettoyage efficace et sécurisé.",
-    "clean.service4.title": "Nettoyage Écologique",
-    "clean.service4.desc": "Des produits non toxiques et respectueux de l'environnement pour un espace propre et sain.",
-    "clean.service5.title": "Désinfection et Dératisation",
-    "clean.service5.desc": "Protégez vos espaces grâce à nos services de désinfection professionnelle et de lutte contre les nuisibles.",
-    "clean.text2": "Nous nous engageons à fournir un service de qualité, alliant efficacité, professionnalisme et respect de l’environnement. Chaque intervention est adaptée à vos besoins pour garantir un espace propre, sain et accueillant.",
+    "clean.title": "Des Solutions d'Investissement Personnalisées",
+    "clean.desc": "Global Investissement+ accompagne particuliers et entreprises dans la croissance de leur capital international grâce à des solutions sur mesure et des stratégies innovantes.",
+    "clean.service1.title": "Investissement Privé",
+    "clean.service1.desc": "Accompagnement sur les placements financiers et opportunités internationales pour particuliers.",
+    "clean.service2.title": "Investissement Entreprises",
+    "clean.service2.desc": "Stratégies sur mesure pour les entreprises souhaitant investir et se développer à l’international.",
+    "clean.service3.title": "Portefeuilles Diversifiés",
+    "clean.service3.desc": "Création et gestion de portefeuilles adaptés aux objectifs et au profil de risque du client.",
+    "clean.service4.title": "Conseil Stratégique",
+    "clean.service4.desc": "Analyses et recommandations pour optimiser vos décisions d’investissement.",
+    "clean.service5.title": "Opportunités Globales",
+    "clean.service5.desc": "Accès à des marchés internationaux et des projets à fort potentiel de croissance.",
+    "clean.text2": "Nous fournissons un accompagnement complet et professionnel, combinant stratégie, expertise et vision internationale pour maximiser vos résultats.",
     "clean.cta": "EN SAVOIR PLUS →",
     "cleaningPage": {
         "header": {
-            "subtitle": "Maisons et bureaux étincelants",
-            "title": "Des maisons étincelantes de propreté, à chaque fois !"
+            "subtitle": "Investissements et croissance internationale",
+            "title": "Développez votre capital avec Global Investissement+"
         },
         "services": [
             {
-                "title": "Nettoyage Professionnel",
-                "description": "Services adaptés aux besoins des particuliers et entreprises.",
+                "title": "Stratégies d'Investissement",
+                "description": "Solutions adaptées aux besoins des particuliers et entreprises pour investir efficacement.",
                 "image": "/images/pro.png"
             },
             {
-                "title": "Nettoyage Industriel",
-                "description": "Solutions de nettoyage pour environnements industriels et usines.",
+                "title": "Marchés Internationaux",
+                "description": "Accédez à des opportunités d’investissement dans le monde entier.",
                 "image": "/images/indu.png"
             },
             {
-                "title": "Vente de Produits d'Entretien",
-                "description": "Distribution de produits professionnels pour tous vos besoins de nettoyage.",
+                "title": "Produits Financiers",
+                "description": "Distribution de solutions financières pour diversifier et sécuriser votre portefeuille.",
                 "image": "/images/vente.png"
             },
             {
-                "title": "Ménage à Domicile",
-                "description": "Services de ménage régulier pour particuliers et résidences.",
+                "title": "Gestion de Portefeuille",
+                "description": "Suivi et optimisation des investissements pour un rendement maximal.",
                 "image": "/images/r5.png"
             },
             {
-                "title": "Nettoyage de Bureaux",
-                "description": "Entretien quotidien ou périodique des espaces professionnels.",
+                "title": "Conseil Personnalisé",
+                "description": "Accompagnement stratégique pour toutes vos décisions financières.",
                 "image": "/images/bureau.png"
-            },
-            {
-                "title": "Désinfection",
-                "description": "Traitements professionnels contre virus et bactéries.",
-                "image": "/images/de.png"
-            },
-            {
-                "title": "Dératisation",
-                "description": "Élimination professionnelle des rongeurs et nuisibles.",
-                "image": "/images/dera.png"
-            },
-            {
-                "title": "Désinsectisation",
-                "description": "Traitement contre tous types d'insectes nuisibles.",
-                "image": "/images/desin.png"
-            },
-            {
-                "title": "Nettoyage de Chantiers",
-                "description": "Nettoyage complet après travaux et rénovation.",
-                "image": "/images/ca.png"
-            },
-            {
-                "title": "Entretien des Vitres et Sols",
-                "description": "Nettoyage professionnel des surfaces vitrées et revêtements de sol.",
-                "image": "/images/vitre.png"
-            },
-            {
-                "title": "Entretien des Espaces Verts",
-                "description": "Tonte, taille et entretien des zones extérieures et jardins.",
-                "image": "/images/vert.png"
             }
         ]
     },
     "productsSection": {
-        "header": "Vente de Produits d'Entretien",
+        "header": "Solutions et Produits Financiers",
         "title": {
             "part1": "Produits de qualité pour",
-            "highlight": "votre propreté"
+            "highlight": "vos investissements"
         },
         "paragraphs": [
-            "Nous proposons une gamme complète de produits d’entretien pour assurer la propreté et l’hygiène de vos espaces.",
-            "Notre sélection comprend des gels nettoyants, crèmes à récurer, gels javel et autres nettoyants de haute qualité.",
-            "Nous travaillons avec des marques reconnues telles que Domestos, AKS, CIF, Maratem et Mr Bee."
+            "Nous proposons une gamme complète de produits financiers pour optimiser vos investissements.",
+            "Notre sélection comprend des fonds, actions, obligations et produits de diversification adaptés à chaque profil.",
+            "Nous travaillons avec des partenaires financiers internationaux de confiance."
         ],
         "products": [
             {
                 "id": 1,
-                "text": "Gel nettoyant"
+                "text": "Fonds d'investissement"
             },
             {
                 "id": 2,
-                "text": "Crème à récurer"
+                "text": "Actions internationales"
             },
             {
                 "id": 3,
-                "text": "Gel javel"
+                "text": "Obligations"
             },
             {
                 "id": 4,
-                "text": "Nettoyant"
+                "text": "Produits diversifiés"
             },
             {
                 "id": 5,
-                "text": "Marques : Domestos, AKS, CIF, Maratem, Mr Bee"
+                "text": "Partenariats financiers internationaux"
             }
         ],
-        "imageAlt": "Produits d'entretien - Gel, crème, nettoyant",
-        "brandsImageAlt": "Marques de produits d'entretien",
+        "imageAlt": "Produits financiers",
+        "brandsImageAlt": "Partenaires financiers",
         "satisfiedClients": {
             "number": "50+",
             "text": "Clients satisfaits"
@@ -190,7 +160,7 @@
     },
     "contactSection": {
         "title": "Contactez-nous",
-        "description": "Vous avez une question ou une suggestion concernant Global cleaning services ? Remplissez le formulaire ci-dessous et nous vous répondrons rapidement.",
+        "description": "Vous avez une question ou souhaitez investir avec Global Investissement+ ? Remplissez le formulaire ci-dessous et nous vous répondrons rapidement.",
         "form": {
             "name": "Votre nom",
             "email": "Adresse e-mail",
@@ -201,7 +171,7 @@
         },
         "location": {
             "title": "Localisation",
-            "address": "Bonaberi - douala - cameroun Bonaberi 4 étages"
+            "address": "Bonaberi - Douala - Cameroun, 4 étages"
         },
         "phone": {
             "title": "Téléphone",
@@ -212,13 +182,13 @@
         },
         "hours": {
             "title": "Horaires",
-            "schedule": "Lundi à vendredi de 09h à 18h Samedi de 09h à 14h"
+            "schedule": "Lundi à vendredi de 09h à 18h, Samedi de 09h à 14h"
         }
     },
     "footer": {
-        "logoAlt": "Global cleaning services",
+        "logoAlt": "Global Investissement+",
         "about": {
-            "description": "Global cleaning services est une société de nettoyage professionnel et industriel située à Douala. Nous accompagnons autant les clients particuliers que les clients professionnels pour des prestations de qualité.",
+            "description": "Global Investissement+ accompagne particuliers et entreprises dans leurs investissements internationaux pour maximiser leur croissance.",
             "followUs": "Suivez-nous"
         },
         "quickLinksTitle": "Liens rapides",
@@ -249,18 +219,18 @@
         },
         "newsletter": {
             "title": "Restez informé",
-            "description": "Inscrivez-vous à notre newsletter pour recevoir des conseils et offres spéciales.",
+            "description": "Inscrivez-vous à notre newsletter pour recevoir des conseils et opportunités d'investissement.",
             "placeholder": "Votre email",
             "button": "S'inscrire"
         },
         "contactInfo": {
-            "address": "Bonaberi - douala - cameroun Bonaberi 4 étages",
+            "address": "Bonaberi - Douala - Cameroun, 4 étages",
             "phone": [
                 "656315965",
                 "678894843"
             ],
-            "hours": "Lundi à vendredi de 09h à 18h Samedi de 09h à 14h",
-            "email": "info@GLOBALCLEANINGSERVICES.com"
+            "hours": "Lundi à vendredi de 09h à 18h, Samedi de 09h à 14h",
+            "email": "info@globalinvestissementplus.com"
         },
         "bottomLinks": [
             {
@@ -281,12 +251,35 @@
         }
     },
     "mapCard": {
-        "name": "Global cleaning services",
-        "addressLine1": "Bonaberi - douala - cameroun Bonaberi 4 étages",
-        "addressLine2": "Bonaberi 4 étages",
-        "rating": "4,5",
-        "reviews": "192 avis",
-        "directions": "Itinéraires",
-        "viewLarger": "Agrandir le plan"
+        "name": "Global Investissement+",
+        "addressLine1": "Douala, Cameroun",
+        "addressLine2": "3486 Bd de la République",
+        "description": "Global Investissement+ est spécialisé dans l'investissement international, offrant des solutions fiables pour particuliers et entreprises à travers le monde.",
+        "rating": "5.0",
+        "reviews": "120",
+        "directions": "Itinéraire",
+        "viewLarger": "Voir sur Google Maps"
+    },
+    "contactSectio": {
+        "location": {
+            "title": "Investissement partout",
+            "address": "Accédez à nos services où que vous soyez grâce à Global Investissement+"
+        },
+        "phone": {
+            "title": "Investissement sûr",
+            "numbers": [
+                "Faites fructifier votre capital en toute sécurité avec Global Investissement+"
+            ]
+        },
+        "hours": {
+            "title": "Disponible 24/7",
+            "schedule": "Profitez de conseils et de support pour vos investissements à tout moment"
+        }
+    },
+    "globalWorld": {
+        "title": "Investissez avec Global Investissement+",
+        "subtitle": "Votre partenaire pour l'investissement international",
+        "description": "Nous offrons des solutions fiables et innovantes pour faire fructifier votre capital partout dans le monde. Découvrez comment nous aidons particuliers et entreprises à sécuriser leurs investissements internationaux.",
+        "cta": "Commencez à investir maintenant"
     }
 }
