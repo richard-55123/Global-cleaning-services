@@ -189,7 +189,7 @@ export default function Header() {
                         {/* DEUX BOUTONS A LA PLACE D'UN */}
                         <div className="flex gap-3">
                             <a
-                                href="investir"
+                                href="/investir"
                                 className="bg-primary/90 text-white py-3 px-6 rounded-full shadow-lg font-semibold transition-all duration-300 active:scale-95 flex items-center gap-2"
                             >
                                 {t("investi")}
@@ -253,7 +253,7 @@ export default function Header() {
                                 {/* DEUX BOUTONS MOBILE */}
                                 <li className="mt-4 pt-4 border-t border-gray-100 flex flex-col gap-3">
                                     <a
-                                        href="investir"
+                                        href="/investir"
                                         className="flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-secondary text-white py-4 px-6 rounded-full shadow-lg font-semibold transition-all duration-300 active:scale-95 text-center"
                                         onClick={handleNavClick}
                                     >
