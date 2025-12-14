@@ -1,21 +1,34 @@
 "use client"
+
 import React, { useEffect, useMemo, useRef, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown, CheckCircle, AlertCircle, Eye } from "lucide-react"
+import {
+    ChevronDown,
+    CheckCircle,
+    AlertCircle,
+    ArrowUp,
+    Eye
+} from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { useInvestissementStore } from "../stores/investissementStore"
 import { countries, type CountryConfig } from "../components/ux/countries"
+import { Link, useNavigate } from "react-router-dom"
+import { toast, ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 const DEFAULT_COUNTRY = "Cameroun"
 
 const InvestissementPage: React.FC = () => {
     const { t } = useTranslation()
-    const { createInvestissement, loading, error } = useInvestissementStore()
+    const navigate = useNavigate()
+    const { createInvestissement, loading } = useInvestissementStore()
 
     const wrapperRef = useRef<HTMLDivElement>(null)
     const defaultCountry = countries.find(c => c.name === DEFAULT_COUNTRY)!
 
-    const [selectedCountry, setSelectedCountry] = useState<CountryConfig>(defaultCountry)
+    const [selectedCountry, setSelectedCountry] =
+        useState<CountryConfig>(defaultCountry)
+
     const [search, setSearch] = useState(defaultCountry.name)
     const [open, setOpen] = useState(false)
 
@@ -29,23 +42,35 @@ const InvestissementPage: React.FC = () => {
     })
 
     /* ===============================
-       UI HELPERS & VALIDATIONS
+       UI HELPERS
     ================================ */
 
     useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
-            if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
+            if (
+                wrapperRef.current &&
+                !wrapperRef.current.contains(e.target as Node)
+            ) {
                 setOpen(false)
             }
         }
+
         document.addEventListener("mousedown", handleClickOutside)
-        return () => document.removeEventListener("mousedown", handleClickOutside)
+        return () =>
+            document.removeEventListener("mousedown", handleClickOutside)
     }, [])
 
     const filteredCountries = useMemo(
-        () => countries.filter(c => c.name.toLowerCase().includes(search.toLowerCase())),
+        () =>
+            countries.filter(c =>
+                c.name.toLowerCase().includes(search.toLowerCase())
+            ),
         [search]
     )
+
+    /* ===============================
+       VALIDATIONS
+    ================================ */
 
     const montantNumber = Number(form.montant)
     const montantValid = montantNumber >= selectedCountry.minInvestment
@@ -57,10 +82,15 @@ const InvestissementPage: React.FC = () => {
 
     const passwordValid = form.password.length >= 6
     const passwordsMatch =
-        form.password === form.confirmPassword && form.confirmPassword.length > 0
+        form.password === form.confirmPassword &&
+        form.confirmPassword.length > 0
 
     const canSubmit =
-        form.nom && phoneValid && montantValid && passwordValid && passwordsMatch
+        form.nom &&
+        phoneValid &&
+        montantValid &&
+        passwordValid &&
+        passwordsMatch
 
     /* ===============================
        HANDLERS
@@ -80,18 +110,31 @@ const InvestissementPage: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        if (!canSubmit) return
 
-        await createInvestissement({
-            nom: form.nom,
-            pays: selectedCountry.name,
-            phone: form.phone,
-            codePays: selectedCountry.callingCode,
-            reseauMobile: form.reseauMobile,
-            MontantIvest: montantNumber.toString(),
-            MontantRecevoir: montantRecevoir.toString(),
-            password: form.password
-        })
+        if (!canSubmit) {
+            toast.error("Veuillez remplir correctement le formulaire.")
+            return
+        }
+
+        try {
+            await createInvestissement({
+                nom: form.nom,
+                pays: selectedCountry.name,
+                phone: form.phone,
+                codePays: selectedCountry.callingCode,
+                reseauMobile: form.reseauMobile,
+                MontantIvest: montantNumber.toString(),
+                MontantRecevoir: montantRecevoir.toString(),
+                password: form.password
+            })
+
+            toast.success("Investissement créé avec succès")
+
+            // Optionnel : reset
+            // setForm({...})
+        } catch (err: any) {
+            toast.error(err.message)
+        }
     }
 
     /* ===============================
@@ -99,7 +142,14 @@ const InvestissementPage: React.FC = () => {
     ================================ */
 
     return (
-        <section className="py-24 px-4 sm:px-6 md:px-[8%] bg-gradient-to-b from-[#E0FFFC] to-white">
+        <section className="py-24 px-4 sm:px-6 md:px-[8%] bg-gradient-to-b from-[#E0FFFC] to-white relative">
+            <button
+                onClick={() => navigate("/")}
+                className="absolute top-6 left-6 p-3 rounded-full bg-white shadow-md"
+            >
+                <ArrowUp size={24} />
+            </button>
+
             {/* HEADER */}
             <div className="text-center mb-16">
                 <motion.h2
@@ -275,8 +325,6 @@ const InvestissementPage: React.FC = () => {
                         )}
                     </div>
 
-                    {error && <p className="text-red-500 text-sm">{error}</p>}
-
                     <div className="flex flex-col sm:flex-row gap-4">
                         <button
                             disabled={!canSubmit || loading}
@@ -285,15 +333,18 @@ const InvestissementPage: React.FC = () => {
                             {loading ? t("invest.loading") : t("invest.button")}
                         </button>
 
-                        <a
-                            href="/login"
+                        <Link
+                            to="/login"
                             className="flex-1 flex items-center justify-center gap-2 py-4 border border-primary rounded-full font-semibold text-primary hover:bg-primary hover:text-white transition"
                         >
                             <Eye size={18} /> Voir mon investissement
-                        </a>
+                        </Link>
                     </div>
                 </form>
             </motion.div>
+
+            {/* TOASTIFY */}
+            <ToastContainer position="top-right" autoClose={5000} hideProgressBar />
         </section>
     )
 }

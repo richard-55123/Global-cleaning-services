@@ -1,14 +1,19 @@
 import { create } from "zustand"
 import type { Investissement, InvestissementPayload } from "../types/investissementType"
-import { createInvestissementService, getInvestissementsService } from "../services/investissemntService"
-
+import {
+    createInvestissementService,
+    getInvestissementsService
+} from "../services/investissemntService"
 
 interface InvestissementState {
     investissements: Investissement[]
     loading: boolean
     error: string | null
 
-    createInvestissement: (payload: InvestissementPayload) => Promise<void>
+    createInvestissement: (
+        payload: InvestissementPayload
+    ) => Promise<Investissement>
+
     fetchInvestissements: () => Promise<void>
 }
 
@@ -17,7 +22,9 @@ export const useInvestissementStore = create<InvestissementState>((set) => ({
     loading: false,
     error: null,
 
-    // ➕ Création
+    /* ===============================
+       CREATE
+    ================================ */
     createInvestissement: async (payload) => {
         try {
             set({ loading: true, error: null })
@@ -28,17 +35,25 @@ export const useInvestissementStore = create<InvestissementState>((set) => ({
                 investissements: [...state.investissements, res.data],
                 loading: false
             }))
+
+            return res.data
         } catch (err: any) {
+            const message =
+                err.response?.data?.message ||
+                "Erreur lors de l'investissement"
+
             set({
-                error:
-                    err.response?.data?.message ||
-                    "Erreur lors de l'investissement",
+                error: message,
                 loading: false
             })
+
+            throw new Error(message)
         }
     },
 
-    // 📄 Liste
+    /* ===============================
+       FETCH LIST
+    ================================ */
     fetchInvestissements: async () => {
         try {
             set({ loading: true, error: null })

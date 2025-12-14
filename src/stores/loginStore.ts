@@ -8,7 +8,7 @@ interface InvestissementState {
     loading: boolean
     error: string | null
 
-    loginInvestissement: (payload: LoginPayload) => Promise<void>
+    loginInvestissement: (payload: LoginPayload) => Promise<{ user: User; token: string }>
     logout: () => void
 }
 
@@ -31,11 +31,18 @@ export const useInvestissementStore = create<InvestissementState>((set) => ({
             })
 
             localStorage.setItem("token", res.token)
+
+            return res
         } catch (err: any) {
+            const message =
+                err.response?.data?.message || "Erreur de connexion"
+
             set({
-                error: err.response?.data?.message || "Erreur de connexion",
+                error: message,
                 loading: false
             })
+
+            throw new Error(message)
         }
     },
 
