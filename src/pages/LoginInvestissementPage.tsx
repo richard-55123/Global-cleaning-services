@@ -82,7 +82,7 @@ const LoginInvestissementPage: React.FC = () => {
     ================================ */
     return (
         <section
-            className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-[10%] bg-gradient-to-b from-[#E0FFFC] to-white overflow-hidden"
+            className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-[10%] bg-gradient-to-b from-[#E0FFFC] to-white overflow-hidden py-12"
         >
             {/* IMAGE DE FOND DISCRÈTE */}
             <div className="absolute inset-0 opacity-10">
