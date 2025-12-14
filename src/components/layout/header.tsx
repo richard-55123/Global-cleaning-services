@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X, Clock, Phone, MapPin, ChevronRight } from "lucide-react";
 import LanguageSwitcher from "../LanguageSwitcher";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 export default function Header() {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -188,20 +189,20 @@ export default function Header() {
 
                         {/* DEUX BOUTONS A LA PLACE D'UN */}
                         <div className="flex gap-3">
-                            <a
-                                href="/investir"
+                            <Link
+                                to="/investir"
                                 className="bg-primary/90 text-white py-3 px-6 rounded-full shadow-lg font-semibold transition-all duration-300 active:scale-95 flex items-center gap-2"
                             >
                                 {t("investi")}
                                 <ChevronRight className="w-4 h-4 translate-x-1 transition-transform duration-300" />
-                            </a>
-                            <a
-                                href="/login"
+                            </Link>
+                            <Link
+                                to="/login"
                                 className="bg-secondary/90 text-white py-3 px-6 rounded-full shadow-lg font-semibold transition-all duration-300 active:scale-95 flex items-center gap-2"
                             >
                                 {t("my_investment")}
                                 <ChevronRight className="w-4 h-4 translate-x-1 transition-transform duration-300" />
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
@@ -252,22 +253,22 @@ export default function Header() {
 
                                 {/* DEUX BOUTONS MOBILE */}
                                 <li className="mt-4 pt-4 border-t border-gray-100 flex flex-col gap-3">
-                                    <a
-                                        href="/investir"
+                                    <Link
+                                        to="/investir"
                                         className="flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-secondary text-white py-4 px-6 rounded-full shadow-lg font-semibold transition-all duration-300 active:scale-95 text-center"
                                         onClick={handleNavClick}
                                     >
                                         {t("investi")}
                                         <ChevronRight className="w-4 h-4" />
-                                    </a>
-                                    <a
-                                        href="/login"
+                                    </Link>
+                                    <Link
+                                        to="/login"
                                         className="flex items-center justify-center gap-3 bg-gradient-to-r from-secondary to-primary text-white py-4 px-6 rounded-full shadow-lg font-semibold transition-all duration-300 active:scale-95 text-center"
                                         onClick={handleNavClick}
                                     >
                                         {t("my_investment")}
                                         <ChevronRight className="w-4 h-4" />
-                                    </a>
+                                    </Link>
                                 </li>
 
                                 <li className="flex justify-center mt-6">
