@@ -10,7 +10,6 @@ export default function Header() {
     const contentRef = useRef<HTMLDivElement>(null);
     const { t } = useTranslation();
 
-    // Effet de défilement pour le shadow
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 10);
@@ -19,7 +18,6 @@ export default function Header() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Défilement automatique optimisé pour mobile et desktop
     useEffect(() => {
         const scrollContainer = scrollRef.current;
         const contentContainer = contentRef.current;
@@ -30,16 +28,15 @@ export default function Header() {
         let animationFrameId: number;
         let isPaused = false;
         let lastTimestamp = 0;
-        const scrollInterval = 20; // Contrôle la vitesse
+        const scrollInterval = 20;
 
-        // Pause au hover/touch
-        const handleEnter = () => isPaused = true;
-        const handleLeave = () => isPaused = false;
+        const handleEnter = () => (isPaused = true);
+        const handleLeave = () => (isPaused = false);
 
-        scrollContainer.addEventListener('mouseenter', handleEnter);
-        scrollContainer.addEventListener('touchstart', handleEnter);
-        scrollContainer.addEventListener('mouseleave', handleLeave);
-        scrollContainer.addEventListener('touchend', handleLeave);
+        scrollContainer.addEventListener("mouseenter", handleEnter);
+        scrollContainer.addEventListener("touchstart", handleEnter);
+        scrollContainer.addEventListener("mouseleave", handleLeave);
+        scrollContainer.addEventListener("touchend", handleLeave);
 
         const scroll = (timestamp: number) => {
             if (!lastTimestamp) lastTimestamp = timestamp;
@@ -50,13 +47,12 @@ export default function Header() {
 
                 if (scrollAmount >= maxScroll) {
                     scrollAmount = 0;
-                    // Reset instantané sans animation
-                    scrollContainer.scrollTo({ left: 0, behavior: 'auto' });
+                    scrollContainer.scrollTo({ left: 0, behavior: "auto" });
                 } else {
-                    scrollAmount += 0.5; // Vitesse réduite pour plus de douceur
+                    scrollAmount += 0.5;
                     scrollContainer.scrollTo({
                         left: scrollAmount,
-                        behavior: 'smooth'
+                        behavior: "smooth",
                     });
                 }
                 lastTimestamp = timestamp;
@@ -68,64 +64,58 @@ export default function Header() {
         animationFrameId = requestAnimationFrame(scroll);
 
         return () => {
-            if (animationFrameId) {
-                cancelAnimationFrame(animationFrameId);
-            }
-            scrollContainer.removeEventListener('mouseenter', handleEnter);
-            scrollContainer.removeEventListener('touchstart', handleEnter);
-            scrollContainer.removeEventListener('mouseleave', handleLeave);
-            scrollContainer.removeEventListener('touchend', handleLeave);
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+            scrollContainer.removeEventListener("mouseenter", handleEnter);
+            scrollContainer.removeEventListener("touchstart", handleEnter);
+            scrollContainer.removeEventListener("mouseleave", handleLeave);
+            scrollContainer.removeEventListener("touchend", handleLeave);
         };
     }, []);
 
-    // Empêcher le scroll du body quand le menu mobile est ouvert
     useEffect(() => {
-        if (mobileOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
-
+        document.body.style.overflow = mobileOpen ? "hidden" : "unset";
         return () => {
-            document.body.style.overflow = 'unset';
+            document.body.style.overflow = "unset";
         };
     }, [mobileOpen]);
 
-    const handleNavClick = () => {
-        setMobileOpen(false);
-    };
+    const handleNavClick = () => setMobileOpen(false);
 
     const linkStyle =
         "text-neutral-700 hover:text-primary transition-all duration-300 font-medium relative group";
 
     return (
-        <header className={`w-full bg-white sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "shadow-lg border-b border-gray-100" : "shadow-md"
-            }`}>
+        <header
+            className={`w-full bg-white sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "shadow-lg border-b border-gray-100" : "shadow-md"
+                }`}
+        >
             {/* ---------------- TOP BAR AVEC DÉFILEMENT AUTO ---------------- */}
             <div className="relative bg-gradient-to-r from-white to-gray-50 border-b border-gray-100">
                 <div
                     ref={scrollRef}
                     className="flex items-center text-sm py-3 px-[10%] overflow-x-auto whitespace-nowrap gap-8 hide-scrollbar scroll-smooth touch-pan-x"
                     style={{
-                        WebkitOverflowScrolling: 'touch',
-                        scrollbarWidth: 'none',
-                        msOverflowStyle: 'none'
+                        WebkitOverflowScrolling: "touch",
+                        scrollbarWidth: "none",
+                        msOverflowStyle: "none",
                     }}
                 >
-                    <div
-                        ref={contentRef}
-                        className="flex items-center gap-8 min-w-max flex-1"
-                    >
+                    <div ref={contentRef} className="flex items-center gap-8 min-w-max flex-1">
                         {/* Message publicitaire 1 */}
                         <div className="flex items-center gap-3 group cursor-pointer flex-shrink-0 min-w-0">
                             <div className="border-2 rounded-lg p-2 border-primary bg-white group-hover:bg-primary group-hover:scale-110 transition-all duration-300 shadow-sm flex-shrink-0">
                                 <Phone className="w-4 h-4 text-primary group-hover:text-white" />
                             </div>
                             <div className="min-w-0">
-                                <p className="font-semibold text-neutral-900 text-sm sm:text-base">{t("contactSection.phone.title")}</p>
-                                <p className="text-neutral-600 text-xs sm:text-sm">{t("contactSectio.phone.numbers.0")}</p>
+                                <p className="font-semibold text-neutral-900 text-sm sm:text-base">
+                                    {t("contactSection.phone.title")}
+                                </p>
+                                <p className="text-neutral-600 text-xs sm:text-sm">
+                                    {t("contactSectio.phone.numbers.0")}
+                                </p>
                             </div>
                         </div>
+
                         {/* Language Switcher */}
                         <div className="flex items-center gap-3 group cursor-pointer flex-shrink-0 min-w-0">
                             <div className="flex-shrink-0">
@@ -139,8 +129,12 @@ export default function Header() {
                                 <MapPin className="w-4 h-4 text-primary group-hover:text-white" />
                             </div>
                             <div className="min-w-0">
-                                <p className="font-semibold text-neutral-900 text-sm sm:text-base">{t("contactSectio.location.title")}</p>
-                                <p className="text-neutral-600 text-xs sm:text-sm">{t("contactSectio.location.address")}</p>
+                                <p className="font-semibold text-neutral-900 text-sm sm:text-base">
+                                    {t("contactSectio.location.title")}
+                                </p>
+                                <p className="text-neutral-600 text-xs sm:text-sm">
+                                    {t("contactSectio.location.address")}
+                                </p>
                             </div>
                         </div>
 
@@ -150,21 +144,22 @@ export default function Header() {
                                 <Clock className="w-4 h-4 text-primary group-hover:text-white" />
                             </div>
                             <div className="min-w-0">
-                                <p className="font-semibold text-neutral-900 text-sm sm:text-base">{t("contactSectio.hours.title")}</p>
-                                <p className="text-neutral-600 text-xs sm:text-sm">{t("contactSectio.hours.schedule")}</p>
+                                <p className="font-semibold text-neutral-900 text-sm sm:text-base">
+                                    {t("contactSectio.hours.title")}
+                                </p>
+                                <p className="text-neutral-600 text-xs sm:text-sm">
+                                    {t("contactSectio.hours.schedule")}
+                                </p>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
 
-
             {/* ---------------- NAVBAR ---------------- */}
             <nav className="py-4 px-[10%] bg-white">
                 <div className="flex items-center justify-between">
-                    {/* LOGO avec animation */}
+                    {/* LOGO */}
                     <div className="flex items-center gap-3 group cursor-pointer">
                         <div className="relative">
                             <img
@@ -172,15 +167,11 @@ export default function Header() {
                                 alt="Logo"
                                 className="w-12 sm:w-16 transition-transform duration-300 group-hover:scale-110"
                             />
-                            {/* <div className="absolute inset-0 border-2 border-primary rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" /> */}
                         </div>
-                        {/* <h1 className="text-2xl sm:text-4xl font-extrabold text-primary tracking-wide group-hover:scale-105 transition-transform duration-300">
-                            GC<span className="text-secondary">S</span>
-                        </h1> */}
                     </div>
 
                     {/* DESKTOP MENU */}
-                    <div className="hidden lg:flex items-center gap-8">
+                    <div className="hidden lg:flex items-center gap-4">
                         <ul className="flex items-center gap-8 text-lg font-medium">
                             {["home", "about", "services", "contact"].map((item) => (
                                 <li key={item}>
@@ -195,18 +186,23 @@ export default function Header() {
                             ))}
                         </ul>
 
-                        <a
-                            href="#"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-primary/90 text-white py-3 px-8 rounded-full shadow-lg font-semibold transition-all duration-300 scale-105 shadow-xl active:scale-95 group relative overflow-hidden"
-                        >
-                            <span className="relative z-10 flex items-center gap-2">
-                                {t("book_now")}
+                        {/* DEUX BOUTONS A LA PLACE D'UN */}
+                        <div className="flex gap-3">
+                            <a
+                                href="investir"
+                                className="bg-primary/90 text-white py-3 px-6 rounded-full shadow-lg font-semibold transition-all duration-300 active:scale-95 flex items-center gap-2"
+                            >
+                                {t("investi")}
                                 <ChevronRight className="w-4 h-4 translate-x-1 transition-transform duration-300" />
-                            </span>
-                            <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 opacity-100 transition-opacity duration-300" />
-                        </a>
+                            </a>
+                            <a
+                                href="/login"
+                                className="bg-secondary/90 text-white py-3 px-6 rounded-full shadow-lg font-semibold transition-all duration-300 active:scale-95 flex items-center gap-2"
+                            >
+                                {t("my_investment")}
+                                <ChevronRight className="w-4 h-4 translate-x-1 transition-transform duration-300" />
+                            </a>
+                        </div>
                     </div>
 
                     {/* MOBILE: Hamburger */}
@@ -229,15 +225,16 @@ export default function Header() {
             {/* ---------------- MENU MOBILE AVEC OVERLAY ---------------- */}
             {mobileOpen && (
                 <>
-                    {/* Overlay */}
                     <div
                         className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden transition-opacity duration-300"
                         onClick={() => setMobileOpen(false)}
                     />
 
-                    {/* Menu mobile */}
-                    <div className={`fixed top-0 left-0 right-0 bg-white z-50 lg:hidden transition-transform duration-300 ease-in-out ${mobileOpen ? 'translate-y-0' : '-translate-y-full'
-                        }`} style={{ marginTop: 'calc(100px + 1px)' }}>
+                    <div
+                        className={`fixed top-0 left-0 right-0 bg-white z-50 lg:hidden transition-transform duration-300 ease-in-out ${mobileOpen ? "translate-y-0" : "-translate-y-full"
+                            }`}
+                        style={{ marginTop: "calc(100px + 1px)" }}
+                    >
                         <div className="px-[10%] py-6 max-h-[calc(100vh-100px)] overflow-y-auto">
                             <ul className="flex flex-col gap-2">
                                 {["home", "about", "services", "produits", "contact"].map((item) => (
@@ -253,15 +250,22 @@ export default function Header() {
                                     </li>
                                 ))}
 
-                                <li className="mt-4 pt-4 border-t border-gray-100">
+                                {/* DEUX BOUTONS MOBILE */}
+                                <li className="mt-4 pt-4 border-t border-gray-100 flex flex-col gap-3">
                                     <a
-                                        href="#"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                        href="investir"
                                         className="flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-secondary text-white py-4 px-6 rounded-full shadow-lg font-semibold transition-all duration-300 active:scale-95 text-center"
                                         onClick={handleNavClick}
                                     >
-                                        {t("book_now")}
+                                        {t("investi")}
+                                        <ChevronRight className="w-4 h-4" />
+                                    </a>
+                                    <a
+                                        href="/login"
+                                        className="flex items-center justify-center gap-3 bg-gradient-to-r from-secondary to-primary text-white py-4 px-6 rounded-full shadow-lg font-semibold transition-all duration-300 active:scale-95 text-center"
+                                        onClick={handleNavClick}
+                                    >
+                                        {t("my_investment")}
                                         <ChevronRight className="w-4 h-4" />
                                     </a>
                                 </li>
@@ -275,24 +279,24 @@ export default function Header() {
                 </>
             )}
 
-            {/* Styles CSS optimisés */}
-            <style >{`
-                .hide-scrollbar {
-                    -ms-overflow-style: none;
-                    scrollbar-width: none;
-                }
-                .hide-scrollbar::-webkit-scrollbar {
-                    display: none;
-                }
-                
-                @media (max-width: 768px) {
-                    /* Optimisation pour le défilement mobile */
-                    .topbar-scroll-container {
-                        -webkit-overflow-scrolling: touch;
-                        scroll-behavior: smooth;
+            <style>
+                {`
+                    .hide-scrollbar {
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
                     }
-                }
-            `}</style>
+                    .hide-scrollbar::-webkit-scrollbar {
+                        display: none;
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .topbar-scroll-container {
+                            -webkit-overflow-scrolling: touch;
+                            scroll-behavior: smooth;
+                        }
+                    }
+                `}
+            </style>
         </header>
     );
 }

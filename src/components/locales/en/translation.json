@@ -12,6 +12,8 @@
     "portfolio": "Portfolio",
     "contact": "Contact",
     "book_now": "Start investing now",
+    "investi": "Invest",
+    "my_investment": "My Investment",
     "hero": {
         "professional_cleaning": {
             "title": "INTERNATIONAL INVESTMENT",
@@ -281,5 +283,21 @@
         "subtitle": "Your partner for international investment",
         "description": "We provide reliable and innovative solutions to grow your capital worldwide. See how we help individuals and businesses secure their international investments.",
         "cta": "Start investing now"
+    },
+    "invest": {
+        "title": "Invest Smartly",
+        "subtitle": "Choose your country, invest safely, and multiply your earnings",
+        "country": "Country",
+        "searchCountry": "Search for a country",
+        "receive": "You will receive",
+        "loading": "Processing...",
+        "button": "Invest Now",
+        "passwordMismatch": "Passwords do not match",
+        "fields": {
+            "nom": "Full Name",
+            "phone": "Phone Number",
+            "password": "Password",
+            "confirmPassword": "Confirm Password"
+        }
     }
 }

@@ -12,6 +12,8 @@
     "portfolio": "Portfolio",
     "contact": "Contact",
     "book_now": "Commencez à investir maintenant",
+    "investi": "Investir",
+    "my_investment": "Mon investissement",
     "hero": {
         "professional_cleaning": {
             "title": "INVESTISSEMENT INTERNATIONAL",
@@ -281,5 +283,36 @@
         "subtitle": "Votre partenaire pour l'investissement international",
         "description": "Nous offrons des solutions fiables et innovantes pour faire fructifier votre capital partout dans le monde. Découvrez comment nous aidons particuliers et entreprises à sécuriser leurs investissements internationaux.",
         "cta": "Commencez à investir maintenant"
+    },
+    "invest": {
+    "title": "Investir intelligemment",
+    "subtitle": "Choisissez votre pays, investissez en toute sécurité et multipliez vos gains",
+    "country": "Pays",
+    "searchCountry": "Rechercher un pays",
+    "receive": "Vous recevrez",
+    "loading": "Traitement en cours...",
+    "button": "Investir maintenant",
+    "viewInvestment": "Voir mon investissement",
+    "passwordMismatch": "Les mots de passe ne correspondent pas",
+    "fields": {
+      "nom": "Nom complet",
+      "phone": "Numéro de téléphone",
+      "reseau": "Réseau mobile",
+      "montant": "Montant",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirmer le mot de passe"
+    }
+  },
+    "login": {
+        "title": "Connexion Investissement",
+        "subtitle": "Connectez-vous pour accéder à votre espace investissement",
+        "loading": "Connexion en cours...",
+        "button": "Se connecter",
+        "noAccount": "Vous n'avez pas de compte ?",
+        "register": "Commencer l'investissement",
+        "fields": {
+            "phone": "Numéro de téléphone",
+            "password": "Mot de passe"
+        }
     }
 }
