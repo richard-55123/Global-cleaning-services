@@ -9,22 +9,19 @@ import { Link, useNavigate } from "react-router-dom"
 import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
-const DEFAULT_COUNTRY = "Cameroun"
-
 const LoginInvestissementPage: React.FC = () => {
     const { t } = useTranslation()
     const navigate = useNavigate()
     const { loginInvestissement, loading } = useInvestissementStore()
 
     const wrapperRef = useRef<HTMLDivElement>(null)
-    const defaultCountry = countries.find(c => c.name === DEFAULT_COUNTRY)!
 
-    const [selectedCountry, setSelectedCountry] = useState<CountryConfig>(defaultCountry)
-    const [searchCountry, setSearchCountry] = useState(defaultCountry.name)
+    const [selectedCountry, setSelectedCountry] = useState<CountryConfig | null>(null)
+    const [searchCountry, setSearchCountry] = useState("")
     const [open, setOpen] = useState(false)
 
     const [form, setForm] = useState({
-        codePays: defaultCountry.callingCode,
+        codePays: "",
         phone: "",
         password: ""
     })
@@ -32,12 +29,12 @@ const LoginInvestissementPage: React.FC = () => {
     /* ===============================
        VALIDATIONS
     ================================ */
-    const phoneValid =
+    const phoneValid = selectedCountry ?
         form.phone.length >= selectedCountry.minLength &&
-        form.phone.length <= selectedCountry.maxLength
+        form.phone.length <= selectedCountry.maxLength : false
 
     const passwordValid = form.password.length > 0
-    const canSubmit = phoneValid && passwordValid
+    const canSubmit = selectedCountry && phoneValid && passwordValid
 
     /* ===============================
        SUBMIT
@@ -50,11 +47,14 @@ const LoginInvestissementPage: React.FC = () => {
             return
         }
 
+        if (!selectedCountry) {
+            toast.error("Veuillez sélectionner un pays.")
+            return
+        }
+
         try {
             await loginInvestissement(form)
-
             toast.success("Connexion réussie")
-
             // navigate("/dashboard") // si besoin
         } catch (err: any) {
             toast.error(err.message)
@@ -115,7 +115,9 @@ const LoginInvestissementPage: React.FC = () => {
                             onClick={() => setOpen(true)}
                             className="flex justify-between px-5 py-4 border rounded-xl cursor-pointer"
                         >
-                            {searchCountry}
+                            <span className={selectedCountry ? "" : "text-gray-400"}>
+                                {selectedCountry ? selectedCountry.name : "Sélectionnez un pays"}
+                            </span>
                             <ChevronDown />
                         </div>
 
@@ -127,21 +129,26 @@ const LoginInvestissementPage: React.FC = () => {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0 }}
                                 >
-                                    <input
-                                        autoFocus
-                                        className="w-full px-4 py-3 border-b"
-                                        value={searchCountry}
-                                        onChange={(e) => setSearchCountry(e.target.value)}
-                                    />
-                                    {filteredCountries.map(c => (
-                                        <div
-                                            key={c.cca2}
-                                            onClick={() => handleCountrySelect(c)}
-                                            className="px-4 py-3 hover:bg-[#D0FFF8] cursor-pointer"
-                                        >
-                                            {c.name}
-                                        </div>
-                                    ))}
+                                    <div className="p-3 border-b">
+                                        <input
+                                            autoFocus
+                                            placeholder="Rechercher un pays"
+                                            className="w-full px-4 py-3 border rounded-lg"
+                                            value={searchCountry}
+                                            onChange={(e) => setSearchCountry(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="max-h-60 overflow-auto">
+                                        {filteredCountries.map(c => (
+                                            <div
+                                                key={c.cca2}
+                                                onClick={() => handleCountrySelect(c)}
+                                                className="px-4 py-3 hover:bg-[#D0FFF8] cursor-pointer rounded-lg"
+                                            >
+                                                {c.name}
+                                            </div>
+                                        ))}
+                                    </div>
                                 </motion.div>
                             )}
                         </AnimatePresence>
@@ -150,15 +157,21 @@ const LoginInvestissementPage: React.FC = () => {
                     <input
                         readOnly
                         value={form.codePays}
+                        placeholder="Code pays"
                         className="w-full px-5 py-4 border rounded-xl bg-gray-100"
                     />
 
                     <input
                         type="tel"
-                        placeholder="Téléphone"
-                        className="w-full px-5 py-4 border rounded-xl"
+                        placeholder={
+                            selectedCountry
+                                ? `Téléphone (${selectedCountry.minLength}-${selectedCountry.maxLength})`
+                                : "Téléphone"
+                        }
+                        className={`w-full px-5 py-4 border rounded-xl ${phoneValid || !selectedCountry ? "" : "border-red-400"}`}
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                        disabled={!selectedCountry}
                     />
 
                     <input
@@ -177,7 +190,12 @@ const LoginInvestissementPage: React.FC = () => {
                     </button>
                 </form>
 
-                <p className="text-center text-sm text-black/60 mt-5"> {t("login.noAccount")}{" "} <Link to="/investir" className="text-primary font-semibold hover:underline"> {t("login.register")} </Link> </p>
+                <p className="text-center text-sm text-black/60 mt-5">
+                    {t("login.noAccount")}{" "}
+                    <Link to="/investir" className="text-primary font-semibold hover:underline">
+                        {t("login.register")}
+                    </Link>
+                </p>
 
                 <ToastContainer position="top-right" autoClose={4000} />
             </motion.div>

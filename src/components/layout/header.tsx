@@ -206,17 +206,36 @@ export default function Header() {
                         </div>
                     </div>
 
-                    {/* MOBILE: Hamburger */}
-                    <div className="lg:hidden flex items-center gap-4">
+                    {/* MOBILE: Hamburger et boutons visibles */}
+                    <div className="lg:hidden flex items-center gap-3">
+                        {/* Boutons visibles sur mobile */}
+                        <div className="flex gap-2">
+                            <Link
+                                to="/investir"
+                                className="bg-primary/90 text-white py-2 px-4 rounded-full shadow-lg font-semibold transition-all duration-300 active:scale-95 flex items-center gap-1 text-sm"
+                            >
+                                {t("investi")}
+                                <ChevronRight className="w-3 h-3 translate-x-0.5 transition-transform duration-300" />
+                            </Link>
+                            <Link
+                                to="/login"
+                                className="bg-secondary/90 text-white py-2 px-4 rounded-full shadow-lg font-semibold transition-all duration-300 active:scale-95 flex items-center gap-1 text-sm"
+                            >
+                                {t("my_investment")}
+                                <ChevronRight className="w-3 h-3 translate-x-0.5 transition-transform duration-300" />
+                            </Link>
+                        </div>
+
+                        {/* Bouton hamburger */}
                         <button
                             className="p-3 rounded-xl hover:bg-gray-100 transition-all duration-300 active:scale-95 border border-transparent hover:border-gray-200"
                             onClick={() => setMobileOpen(!mobileOpen)}
                             aria-label="Toggle menu"
                         >
                             {mobileOpen ? (
-                                <X size={24} className="text-primary" />
+                                <X size={20} className="text-primary" />
                             ) : (
-                                <Menu size={24} className="text-primary" />
+                                <Menu size={20} className="text-primary" />
                             )}
                         </button>
                     </div>
@@ -251,7 +270,7 @@ export default function Header() {
                                     </li>
                                 ))}
 
-                                {/* DEUX BOUTONS MOBILE */}
+                                {/* BOUTONS DANS LE MENU MOBILE (version complémentaire) */}
                                 <li className="mt-4 pt-4 border-t border-gray-100 flex flex-col gap-3">
                                     <Link
                                         to="/investir"

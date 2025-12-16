@@ -16,27 +16,24 @@ import { Link, useNavigate } from "react-router-dom"
 import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
-const DEFAULT_COUNTRY = "Cameroun"
-
 const InvestissementPage: React.FC = () => {
     const { t } = useTranslation()
     const navigate = useNavigate()
     const { createInvestissement, loading } = useInvestissementStore()
 
     const wrapperRef = useRef<HTMLDivElement>(null)
-    const defaultCountry = countries.find(c => c.name === DEFAULT_COUNTRY)!
 
     const [selectedCountry, setSelectedCountry] =
-        useState<CountryConfig>(defaultCountry)
+        useState<CountryConfig | null>(null)
 
-    const [search, setSearch] = useState(defaultCountry.name)
+    const [search, setSearch] = useState("")
     const [open, setOpen] = useState(false)
 
     const [form, setForm] = useState({
         nom: "",
         phone: "",
-        reseauMobile: defaultCountry.mobileNetworks[0],
-        montant: defaultCountry.minInvestment.toString(),
+        reseauMobile: "",
+        montant: "",
         password: "",
         confirmPassword: ""
     })
@@ -72,13 +69,13 @@ const InvestissementPage: React.FC = () => {
        VALIDATIONS
     ================================ */
 
-    const montantNumber = Number(form.montant)
-    const montantValid = montantNumber >= selectedCountry.minInvestment
-    const montantRecevoir = montantNumber * 10
+    const montantNumber = Number(form.montant) || 0
+    const montantValid = selectedCountry ? montantNumber >= selectedCountry.minInvestment : false
+    const montantRecevoir = montantNumber * 10.8
 
-    const phoneValid =
+    const phoneValid = selectedCountry ?
         form.phone.length >= selectedCountry.minLength &&
-        form.phone.length <= selectedCountry.maxLength
+        form.phone.length <= selectedCountry.maxLength : false
 
     const passwordValid = form.password.length >= 6
     const passwordsMatch =
@@ -87,6 +84,7 @@ const InvestissementPage: React.FC = () => {
 
     const canSubmit =
         form.nom &&
+        selectedCountry &&
         phoneValid &&
         montantValid &&
         passwordValid &&
@@ -116,6 +114,11 @@ const InvestissementPage: React.FC = () => {
             return
         }
 
+        if (!selectedCountry) {
+            toast.error("Veuillez sélectionner un pays.")
+            return
+        }
+
         try {
             await createInvestissement({
                 nom: form.nom,
@@ -129,9 +132,6 @@ const InvestissementPage: React.FC = () => {
             })
 
             toast.success("Investissement créé avec succès")
-
-            // Optionnel : reset
-            // setForm({...})
         } catch (err: any) {
             toast.error(err.message)
         }
@@ -202,7 +202,7 @@ const InvestissementPage: React.FC = () => {
                             onClick={() => setOpen(true)}
                             className="flex items-center justify-between px-5 py-4 border rounded-xl cursor-pointer"
                         >
-                            <span>{search}</span>
+                            <span>{selectedCountry ? selectedCountry.name : t("invest.searchCountry")}</span>
                             <ChevronDown />
                         </div>
 
@@ -243,15 +243,21 @@ const InvestissementPage: React.FC = () => {
                     {/* PHONE */}
                     <div className="flex flex-col sm:flex-row gap-4">
                         <input
-                            value={selectedCountry.callingCode}
+                            value={selectedCountry?.callingCode || ""}
                             readOnly
+                            placeholder="Code"
                             className="sm:w-28 px-4 py-4 border rounded-xl bg-gray-100"
                         />
                         <input
-                            placeholder={`${t("invest.fields.phone")} (${selectedCountry.minLength}-${selectedCountry.maxLength})`}
-                            className={`flex-1 px-5 py-4 border rounded-xl ${phoneValid ? "" : "border-red-400"}`}
+                            placeholder={
+                                selectedCountry
+                                    ? `${t("invest.fields.phone")} (${selectedCountry.minLength}-${selectedCountry.maxLength})`
+                                    : t("invest.fields.phone")
+                            }
+                            className={`flex-1 px-5 py-4 border rounded-xl ${phoneValid || !selectedCountry ? "" : "border-red-400"}`}
                             value={form.phone}
                             onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                            disabled={!selectedCountry}
                         />
                     </div>
 
@@ -259,13 +265,18 @@ const InvestissementPage: React.FC = () => {
                     <div className="flex flex-col">
                         <label className="text-sm text-black/60 mb-1">{t("invest.fields.reseau")}</label>
                         <select
-                            className="w-full px-5 py-4 border rounded-xl"
+                            className="w-full px-5 py-4 border rounded-xl disabled:opacity-50"
                             value={form.reseauMobile}
                             onChange={(e) => setForm({ ...form, reseauMobile: e.target.value })}
+                            disabled={!selectedCountry}
                         >
-                            {selectedCountry.mobileNetworks.map(net => (
-                                <option key={net}>{net}</option>
-                            ))}
+                            {selectedCountry ? (
+                                selectedCountry.mobileNetworks.map(net => (
+                                    <option key={net}>{net}</option>
+                                ))
+                            ) : (
+                                <option value="">{t("invest.selectCountryFirst")}</option>
+                            )}
                         </select>
                     </div>
 
@@ -274,14 +285,17 @@ const InvestissementPage: React.FC = () => {
                         <label className="text-sm text-black/60 mb-1">Montant</label>
                         <input
                             type="number"
-                            min={selectedCountry.minInvestment}
-                            className={`w-full px-5 py-4 border rounded-xl ${montantValid ? "" : "border-red-400"}`}
+                            min={selectedCountry?.minInvestment || 0}
+                            className={`w-full px-5 py-4 border rounded-xl ${montantValid || !selectedCountry ? "" : "border-red-400"}`}
                             value={form.montant}
                             onChange={(e) => setForm({ ...form, montant: e.target.value })}
+                            disabled={!selectedCountry}
                         />
-                        <p className="text-sm text-black/60 mt-2">
-                            Min : {selectedCountry.minInvestment} {selectedCountry.currency}
-                        </p>
+                        {selectedCountry && (
+                            <p className="text-sm text-black/60 mt-2">
+                                Min : {selectedCountry.minInvestment} {selectedCountry.currency}
+                            </p>
+                        )}
                     </div>
 
                     {/* RESULT */}
@@ -289,7 +303,7 @@ const InvestissementPage: React.FC = () => {
                         <div>
                             <p className="text-sm text-black/60">{t("invest.receive")}</p>
                             <p className="text-2xl font-bold text-secondary">
-                                {montantRecevoir || 0} {selectedCountry.currency}
+                                {montantRecevoir || 0} {selectedCountry?.currency || ""}
                             </p>
                         </div>
                         {montantValid && <CheckCircle className="text-primary w-8 h-8" />}
