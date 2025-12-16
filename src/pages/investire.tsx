@@ -77,7 +77,7 @@ const InvestissementPage: React.FC = () => {
         form.phone.length >= selectedCountry.minLength &&
         form.phone.length <= selectedCountry.maxLength : false
 
-    const passwordValid = form.password.length >= 6
+    const passwordValid = form.password.length >= 4
     const passwordsMatch =
         form.password === form.confirmPassword &&
         form.confirmPassword.length > 0

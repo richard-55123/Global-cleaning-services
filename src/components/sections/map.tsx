@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const GlobalWorldMap: React.FC = () => {
     const { t } = useTranslation();
@@ -24,12 +25,12 @@ const GlobalWorldMap: React.FC = () => {
                 <p className="text-gray-600 text-sm md:text-base mb-8">
                     {t("globalWorld.description")}
                 </p>
-                <a
-                    href="#invest"
+                <Link
+                    to="/investir"
                     className="inline-block px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-full hover:bg-blue-700 transition-colors"
                 >
                     {t("globalWorld.cta")}
-                </a>
+                </Link>
             </div>
 
             {/* Exemples de points d'investissement */}
