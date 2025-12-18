@@ -15,13 +15,15 @@ export interface Investissement {
     updatedat: string
 }
 
-export interface InvestissementPayload {
+export type InvestissementPayload = {
     nom: string
     pays: string
     phone: string
     codePays: string
     reseauMobile: string
     MontantIvest: string
+    MontantRecevoir: string // ✅ AJOUT ICI (SEULE CORRECTION)
+    password: string
 }
 
 export interface InvestissementResponse {
