@@ -1,7 +1,6 @@
 import React, { useEffect } from "react"
 import { motion } from "framer-motion"
 import { MdOutlineAccountBalanceWallet } from "react-icons/md"
-import { Home } from "lucide-react"
 import { useUserStore } from "../stores/resultatStore"
 
 const UserInvest: React.FC = () => {
@@ -11,146 +10,185 @@ const UserInvest: React.FC = () => {
         fetchUser()
     }, [fetchUser])
 
-    if (loading)
-        return (
-            <p className="text-center py-20 text-gray-500">Chargement...</p>
-        )
-    if (error)
-        return (
-            <p className="text-center py-20 text-red-500">{error}</p>
-        )
+    if (loading) return <p className="text-center py-20 text-gray-500">Chargement...</p>
+    if (error) return <p className="text-center py-20 text-red-500">{error}</p>
 
-    const conseillerPhone = "+237656459046"
+    const conseillerPhone = "229XXXXXXXX"
 
-    // === TEXTE ACCUEIL POURCENT === 0
+    const whatsappLink = (message: string) =>
+        `https://wa.me/${conseillerPhone}?text=${encodeURIComponent(message)}`
+
+    /* =============================
+          VARIABLES DYNAMIQUES
+    ============================== */
+    let title = ""
+    let description = ""
+    let progress = 0
+    let whatsappMessage = ""
+
+    /* =============================
+          ETAPE 1 — ACTIVATION
+    ============================== */
     if (user.pourcent === 0) {
-        const whatsappMessage = `Bonjour, je souhaite commencer mon investissement auprès de Global Investment. 
+        title = `Bienvenue ${user.nom}`
+        description = `Nous sommes ravis de vous accueillir chez Global Investment.
+
+Votre investissement initial de ${user.MontantIvest}  vous permettra de percevoir ${user.MontantRecevoir} .
+Afin d’activer officiellement votre dossier et initier votre stratégie d’investissement, veuillez contacter votre conseiller dédié.`
+        progress = 10
+        whatsappMessage = `Bonjour, je souhaite débuter mon investissement chez Global Investment.
 Nom: ${user.nom}
 Pays: ${user.pays}
 Téléphone: ${user.phone}
-Réseau: ${user.codePays}
-Montant à investir: ${user.MontantIvest}
-Merci de me guider pour finaliser mon investissement.`
-
-        const whatsappLink = `https://wa.me/${conseillerPhone}?text=${encodeURIComponent(
-            whatsappMessage
-        )}`
-
-        return (
-            <section className="px-6 py-16 bg-gray-50 min-h-screen flex flex-col items-center justify-center">
-                <div className="max-w-xl text-center bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
-                        Bienvenue, {user.nom} !
-                    </h2>
-                    {/* <p className="text-gray-700 mb-4 text-lg">
-            Vous êtes sur le point d’investir avec Global Investment. 
-            Votre capital de <span className="font-semibold">{user.MontantIvest}</span> vous permettra de recevoir <span className="font-semibold">{user.MontantRecevoir}</span> selon vos choix. 
-          </p> */}
-                    <p className="text-gray-700 mb-6 text-lg">
-                        Pour finaliser votre investissement, contactez votre conseiller dès maintenant. Il vous guidera et activera votre dossier immédiatement.
-                    </p>
-
-                    <a
-                        href={whatsappLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all duration-300"
-                    >
-                        Contacter le conseiller via WhatsApp
-                    </a>
-                </div>
-            </section>
-        )
+Montant à investir: ${user.MontantIvest} `
     }
 
-    // === INFO UTILISATEUR NORMAL
-    const infoItems = [
-        { title: "Nom", value: user.nom, icon: <Home className="w-6 h-6 text-white" /> },
-        { title: "Pays", value: user.pays, icon: <MdOutlineAccountBalanceWallet className="w-6 h-6 text-white" /> },
-        { title: "Code Pays", value: user.codePays, icon: <MdOutlineAccountBalanceWallet className="w-6 h-6 text-white" /> },
-        { title: "Téléphone", value: user.phone, icon: <MdOutlineAccountBalanceWallet className="w-6 h-6 text-white" /> },
-        { title: "Montant Investi", value: `${user.MontantIvest}`, icon: <MdOutlineAccountBalanceWallet className="w-6 h-6 text-white" /> },
-        { title: "Montant à Recevoir", value: `${user.MontantRecevoir}`, icon: <MdOutlineAccountBalanceWallet className="w-6 h-6 text-white" /> },
-        { title: "Durée", value: user.duree ?? "Non définie", icon: <MdOutlineAccountBalanceWallet className="w-6 h-6 text-white" /> },
+    /* =============================
+          ETAPE 2 — PLUS-VALUE
+    ============================== */
+    else if (user.pourcent === 1) {
+        const depot = Number(user.MontantIvest)
+        const nouveauMontant = Number(user.MontantRecevoir) * 1.6
+
+        title = `Valorisation exceptionnelle de votre portefeuille`
+        description = `Suite à une évolution favorable du sous-jacent, votre ligne d’investissement a enregistré une appréciation significative de 60%.
+
+Votre nouveau montant à recevoir est estimé à ${nouveauMontant} .
+
+Afin de maintenir votre exposition sur cet actif et continuer à bénéficier de cette dynamique, un versement complémentaire de ${depot}  est requis.
+Merci de procéder au dépôt auprès de votre conseiller.`
+        progress = 27
+        whatsappMessage = `Salut, je suis ${user.nom}, pays ${user.pays}, téléphone ${user.phone}.
+Suite à une hausse de 60%, mon nouveau montant à recevoir est de ${nouveauMontant} .
+Je dois effectuer un dépôt de ${depot}  pour poursuivre mon investissement.`
+    }
+
+    /* =============================
+          ETAPE 3 — CONVERSION
+    ============================== */
+    else if (user.pourcent === 2) {
+        const fraisConversion = Number(user.MontantIvest) * 0.3
+
+        title = `Ajustement multidevises`
+        description = `Dans le cadre de la réévaluation de votre portefeuille multidevises, les fluctuations des taux de change ont un impact sur vos actifs libellés en dollars.
+
+Un dépôt de ${fraisConversion} , correspondant aux frais de conversion et au spread de marché, est requis afin de préserver votre exposition initiale sur les valeurs américaines sélectionnées.
+
+Montant à recevoir : ${user.MontantRecevoir} 
+
+Veuillez effectuer ce dépôt auprès de votre conseiller afin de garantir la continuité de votre stratégie d’investissement.`
+        progress = 65
+        whatsappMessage = `Salut, je suis ${user.nom}, pays ${user.pays}, téléphone ${user.phone}.
+Suite aux frais de conversion, je dois effectuer un dépôt de ${fraisConversion}  pour continuer mon investissement.
+Merci de m’accompagner.`
+    }
+
+    /* =============================
+          ETAPE 4 — TAXES
+    ============================== */
+    else if (user.pourcent === 3) {
+        const taxes = Number(user.MontantRecevoir) * 0.15
+
+        title = `Règlement fiscal réglementaire`
+        description = `Suite à la réalisation de plus-values sur votre portefeuille d’actions, un prélèvement fiscal obligatoire est dû conformément à la réglementation en vigueur.
+
+Un dépôt de ${taxes}  est requis afin d’apurer cette créance fiscale anticipée, vous permettant de maintenir l’intégrité de votre stratégie d’investissement et d’éviter tout incident de règlement.
+
+Montant à recevoir : ${user.MontantRecevoir} 
+
+Merci de procéder au dépôt auprès de votre conseiller afin de poursuivre votre investissement.`
+        progress = 90
+        whatsappMessage = `Salut, je suis ${user.nom}, pays ${user.pays}, téléphone ${user.phone}.
+Suite aux taxes gouvernementales, je dois effectuer un dépôt de ${taxes}  pour continuer mon investissement.
+Veuillez me l’accorder.`
+    }
+
+    /* =============================
+          ETAPE FINALE
+    ============================== */
+    else {
+        title = `Investissement finalisé`
+        description = `Votre investissement a été intégralement validé.
+
+Votre conseiller reste à votre entière disposition pour organiser la réception de vos gains ou vous accompagner dans de nouvelles opportunités d’investissement adaptées à votre profil.`
+        progress = 100
+        whatsappMessage = `Bonjour, mon investissement est désormais finalisé.
+Nom: ${user.nom}
+Téléphone: ${user.phone}
+Merci pour votre accompagnement.`
+    }
+
+    /* =============================
+          UI DASHBOARD
+    ============================== */
+    const infoCards = [
+        // { label: "Nom", value: user.nom, icon: <Home /> },
+        // { label: "Pays", value: user.pays, icon: <Globe /> },
+        // { label: "Téléphone", value: user.phone, icon: <Phone /> },
+        { label: "Montant investi", value: `${user.MontantIvest} `, icon: <MdOutlineAccountBalanceWallet /> },
+        { label: "Montant à recevoir", value: `${user.MontantRecevoir} `, icon: <MdOutlineAccountBalanceWallet /> },
+        { label: "Durée", value: user.duree ?? "—", icon: <MdOutlineAccountBalanceWallet /> },
     ]
 
-    const getProgressColor = (percent: number) => {
-        if (percent < 50) return "bg-red-500"
-        if (percent < 80) return "bg-yellow-500"
-        return "bg-green-500"
-    }
-
-    // WhatsApp contact rapide
-    const whatsappMessage = `Bonjour, je souhaite contacter mon conseiller pour mon investissement. 
-Nom: ${user.nom}
-Pays: ${user.pays}
-Téléphone: ${user.phone}
-Montant à investir: ${user.MontantIvest}`
-    const whatsappLink = `https://wa.me/${conseillerPhone}?text=${encodeURIComponent(
-        whatsappMessage
-    )}`
-
     return (
-        <section className="px-8 py-16 bg-gray-50 min-h-screen">
-            <div className="max-w-6xl mx-auto">
+        <section className="bg-gray-50 min-h-screen px-4 sm:px-8 py-16">
+            <div className="max-w-7xl mx-auto">
 
-                {/* TITRE PRINCIPAL */}
-                <h2 className="text-4xl font-bold text-gray-800 mb-10 text-center">
-                    Global Investment Dashboard
-                </h2>
+                {/* HEADER */}
+                <div className="text-center mb-12">
+                    <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
+                        {title}
+                    </h1>
+                    <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                        {description}
+                    </p>
+                </div>
 
-                {/* Barre de progression */}
-                <div className="bg-white p-6 rounded-2xl shadow-lg mb-12 border border-gray-200">
-                    <h3 className="text-xl font-semibold text-gray-700 mb-4 text-center">
-                        Progression Globale
+                {/* PROGRESSION */}
+                <div className="bg-white rounded-2xl shadow p-6 mb-14">
+                    <h3 className="text-center font-semibold text-gray-700 mb-4">
+                        Avancement global de votre investissement
                     </h3>
-                    <div className="w-full bg-gray-200 h-8 rounded-full overflow-hidden">
+                    <div className="w-full bg-gray-200 h-5 rounded-full overflow-hidden">
                         <motion.div
-                            className={`${getProgressColor(user.pourcent)} h-8 rounded-full flex items-center justify-center text-white font-semibold`}
+                            className="bg-primary h-5 rounded-full text-white text-sm font-semibold flex items-center justify-center"
                             initial={{ width: 0 }}
-                            animate={{ width: `${user.pourcent}%` }}
-                            transition={{ duration: 1.5 }}
+                            animate={{ width: `${progress}%` }}
+                            transition={{ duration: 1.2 }}
                         >
-                            {user.pourcent}%
+                            {progress}%
                         </motion.div>
                     </div>
                 </div>
 
-                {/* Cartes d'information */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {infoItems.map((item, index) => (
+                {/* INFOS */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                    {infoCards.map((item, index) => (
                         <motion.div
                             key={index}
-                            whileHover={{ scale: 1.05 }}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            className="flex items-center gap-4 p-5 bg-gradient-to-r from-primary to-secondary rounded-2xl shadow-md text-white cursor-pointer"
+                            whileHover={{ scale: 1.04 }}
+                            className="bg-gradient-to-r from-primary to-secondary text-white p-5 rounded-xl shadow-md flex gap-4"
                         >
-                            <div className="p-3 bg-white/20 rounded-full">{item.icon}</div>
+                            <div className="bg-white/20 p-3 rounded-full">{item.icon}</div>
                             <div>
-                                <h4 className="font-bold text-lg">{item.title}</h4>
-                                <p className="text-sm opacity-90">{item.value}</p>
+                                <p className="text-sm opacity-80">{item.label}</p>
+                                <p className="font-bold">{item.value}</p>
                             </div>
                         </motion.div>
                     ))}
                 </div>
 
-                {/* Bouton WhatsApp */}
-                <div className="text-center mt-16">
-                    <motion.a
-                        href={whatsappLink}
+                {/* WHATSAPP */}
+                <div className="text-center">
+                    <a
+                        href={whatsappLink(whatsappMessage)}
                         target="_blank"
-                        rel="noopener noreferrer"
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="inline-block bg-green-500 text-white font-semibold px-12 py-4 rounded-full shadow-xl hover:bg-green-600 transition-all duration-300"
+                        className="inline-block bg-green-500 hover:bg-green-600 text-white px-10 py-4 rounded-full font-semibold shadow-xl transition"
                     >
-                        Contacter le conseiller via WhatsApp
-                    </motion.a>
+                        Contacter mon conseiller via WhatsApp
+                    </a>
                 </div>
+
             </div>
         </section>
     )

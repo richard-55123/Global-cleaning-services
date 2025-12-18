@@ -35,7 +35,7 @@ const InvestissementPage: React.FC = () => {
         reseauMobile: "",
         montant: "",
         password: "",
-        confirmPassword: ""
+        confirmPassword: "",
     })
 
     /* ===============================
