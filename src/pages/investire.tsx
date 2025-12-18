@@ -115,7 +115,7 @@ const InvestissementPage: React.FC = () => {
         }
 
         if (!selectedCountry) {
-            toast.error("Veuillez sélectionner un pays.")
+            toast.error("Veuillez sélectionner un pays")
             return
         }
 
