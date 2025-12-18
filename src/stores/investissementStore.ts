@@ -9,6 +9,7 @@ interface InvestissementState {
     investissements: Investissement[]
     loading: boolean
     error: string | null
+    
 
     createInvestissement: (
         payload: InvestissementPayload
@@ -30,6 +31,9 @@ export const useInvestissementStore = create<InvestissementState>((set) => ({
             set({ loading: true, error: null })
 
             const res = await createInvestissementService(payload)
+
+           
+            localStorage.setItem("token", res.token)
 
             set((state) => ({
                 investissements: [...state.investissements, res.data],

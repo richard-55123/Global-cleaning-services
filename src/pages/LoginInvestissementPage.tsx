@@ -55,7 +55,7 @@ const LoginInvestissementPage: React.FC = () => {
         try {
             await loginInvestissement(form)
             toast.success("Connexion réussie")
-            // navigate("/dashboard") // si besoin
+            navigate("/") 
         } catch (err: any) {
             toast.error(err.message)
         }

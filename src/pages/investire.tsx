@@ -132,6 +132,7 @@ const InvestissementPage: React.FC = () => {
             })
 
             toast.success("Investissement créé avec succès")
+            navigate("/")
         } catch (err: any) {
             toast.error(err.message)
         }
