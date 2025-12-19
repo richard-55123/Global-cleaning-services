@@ -27,7 +27,7 @@ const PrivateLayout: React.FC = () => {
     const handleLogout = () => {
         logoutStore()
         logoutUtil()
-        navigate("/login")
+        navigate("/")
     }
 
     return (
