@@ -29,7 +29,7 @@ export const useUserStore = create<UserState>((set) => ({
     fetchUser: async () => {
         set({ loading: true, error: null });
         try {
-            const response = await api.get("/invest/me"); 
+            const response = await api.post("/invest/me");
             set({ ...response.data, loading: false });
         } catch (err: any) {
             set({ error: err.message || "Erreur API", loading: false });
