@@ -5,13 +5,12 @@ import { ChevronDown, ArrowUp } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { useInvestissementStore } from "../stores/loginStore"
 import { countries, type CountryConfig } from "../components/ux/countries"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 const LoginInvestissementPage: React.FC = () => {
     const { t } = useTranslation()
-    const navigate = useNavigate()
     const { loginInvestissement, loading } = useInvestissementStore()
 
     const wrapperRef = useRef<HTMLDivElement>(null)
@@ -29,9 +28,10 @@ const LoginInvestissementPage: React.FC = () => {
     /* ===============================
        VALIDATIONS
     ================================ */
-    const phoneValid = selectedCountry ?
-        form.phone.length >= selectedCountry.minLength &&
-        form.phone.length <= selectedCountry.maxLength : false
+    const phoneValid = selectedCountry
+        ? form.phone.length >= selectedCountry.minLength &&
+        form.phone.length <= selectedCountry.maxLength
+        : false
 
     const passwordValid = form.password.length > 0
     const canSubmit = selectedCountry && phoneValid && passwordValid
@@ -55,7 +55,9 @@ const LoginInvestissementPage: React.FC = () => {
         try {
             await loginInvestissement(form)
             toast.success("Connexion réussie")
-            navigate("/") 
+
+            // 🔴 REDIRECTION AVEC RECHARGEMENT DE LA PAGE
+            window.location.href = "/"
         } catch (err: any) {
             toast.error(err.message)
         }
@@ -86,18 +88,22 @@ const LoginInvestissementPage: React.FC = () => {
     }, [])
 
     const filteredCountries = useMemo(
-        () => countries.filter(c => c.name.toLowerCase().includes(searchCountry.toLowerCase())),
+        () =>
+            countries.filter(c =>
+                c.name.toLowerCase().includes(searchCountry.toLowerCase())
+            ),
         [searchCountry]
     )
 
     return (
         <section className="relative min-h-screen flex items-center justify-center px-4 bg-gradient-to-b from-[#E0FFFC] to-white">
-            <button
-                onClick={() => navigate("/")}
+            {/* 🔴 RETOUR AVEC BALISE <a> */}
+            <a
+                href="/"
                 className="absolute top-6 left-6 p-3 rounded-full bg-white shadow-md"
             >
                 <ArrowUp size={24} />
-            </button>
+            </a>
 
             <motion.div
                 className="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8"
@@ -116,7 +122,9 @@ const LoginInvestissementPage: React.FC = () => {
                             className="flex justify-between px-5 py-4 border rounded-xl cursor-pointer"
                         >
                             <span className={selectedCountry ? "" : "text-gray-400"}>
-                                {selectedCountry ? selectedCountry.name : "Sélectionnez un pays"}
+                                {selectedCountry
+                                    ? selectedCountry.name
+                                    : "Sélectionnez un pays"}
                             </span>
                             <ChevronDown />
                         </div>
@@ -135,7 +143,9 @@ const LoginInvestissementPage: React.FC = () => {
                                             placeholder="Rechercher un pays"
                                             className="w-full px-4 py-3 border rounded-lg"
                                             value={searchCountry}
-                                            onChange={(e) => setSearchCountry(e.target.value)}
+                                            onChange={(e) =>
+                                                setSearchCountry(e.target.value)
+                                            }
                                         />
                                     </div>
                                     <div className="max-h-60 overflow-auto">
@@ -168,9 +178,14 @@ const LoginInvestissementPage: React.FC = () => {
                                 ? `Téléphone (${selectedCountry.minLength}-${selectedCountry.maxLength})`
                                 : "Téléphone"
                         }
-                        className={`w-full px-5 py-4 border rounded-xl ${phoneValid || !selectedCountry ? "" : "border-red-400"}`}
+                        className={`w-full px-5 py-4 border rounded-xl ${phoneValid || !selectedCountry
+                                ? ""
+                                : "border-red-400"
+                            }`}
                         value={form.phone}
-                        onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                        onChange={e =>
+                            setForm({ ...form, phone: e.target.value })
+                        }
                         disabled={!selectedCountry}
                     />
 
@@ -179,7 +194,9 @@ const LoginInvestissementPage: React.FC = () => {
                         placeholder="Mot de passe"
                         className="w-full px-5 py-4 border rounded-xl"
                         value={form.password}
-                        onChange={(e) => setForm({ ...form, password: e.target.value })}
+                        onChange={e =>
+                            setForm({ ...form, password: e.target.value })
+                        }
                     />
 
                     <button
@@ -192,7 +209,10 @@ const LoginInvestissementPage: React.FC = () => {
 
                 <p className="text-center text-sm text-black/60 mt-5">
                     {t("login.noAccount")}{" "}
-                    <Link to="/investir" className="text-primary font-semibold hover:underline">
+                    <Link
+                        to="/investir"
+                        className="text-primary font-semibold hover:underline"
+                    >
                         {t("login.register")}
                     </Link>
                 </p>

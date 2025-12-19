@@ -7,27 +7,28 @@ export interface Investissement {
     reseauMobile: string
     MontantIvest: string
     MontantRecevoir: string
-    code: string
-    password: string
-    pourcent: number
-    duree: number | null
-    createdat: string
-    updatedat: string
+    pourcent?: number
+    duree?: number
+    createdat: string | Date
+    password?: string
 }
 
-export type InvestissementPayload = {
+export interface InvestissementPayload {
     nom: string
     pays: string
     phone: string
     codePays: string
     reseauMobile: string
     MontantIvest: string
-    MontantRecevoir: string // ✅ AJOUT ICI (SEULE CORRECTION)
+    MontantRecevoir: string
     password: string
+    pourcent?: number
+    duree?: number
 }
 
 export interface InvestissementResponse {
-    message: string
+    success: boolean
+    message?: string
+    token?: string
     data: Investissement
-    token: string
 }

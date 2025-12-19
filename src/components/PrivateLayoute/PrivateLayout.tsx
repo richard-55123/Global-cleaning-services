@@ -27,7 +27,7 @@ const PrivateLayout: React.FC = () => {
     const handleLogout = () => {
         logoutStore()
         logoutUtil()
-        navigate("/")
+        navigate("/login")
     }
 
     return (
@@ -71,13 +71,13 @@ const PrivateLayout: React.FC = () => {
 
                 {/* Logout */}
                 <div className="mt-auto p-6">
-                    <button
+                    <a
                         onClick={handleLogout}
                         className="w-full flex items-center justify-center gap-3 py-3 rounded-xl border border-white/30 hover:bg-white/15 transition"
                     >
                         <LogOut className="w-5 h-5" />
                         <span className="text-sm font-medium">Déconnexion</span>
-                    </button>
+                    </a>
                 </div>
             </aside>
 

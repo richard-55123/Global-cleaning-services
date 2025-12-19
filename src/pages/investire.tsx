@@ -12,20 +12,17 @@ import {
 import { useTranslation } from "react-i18next"
 import { useInvestissementStore } from "../stores/investissementStore"
 import { countries, type CountryConfig } from "../components/ux/countries"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 const InvestissementPage: React.FC = () => {
     const { t } = useTranslation()
-    const navigate = useNavigate()
     const { createInvestissement, loading } = useInvestissementStore()
 
     const wrapperRef = useRef<HTMLDivElement>(null)
 
-    const [selectedCountry, setSelectedCountry] =
-        useState<CountryConfig | null>(null)
-
+    const [selectedCountry, setSelectedCountry] = useState<CountryConfig | null>(null)
     const [search, setSearch] = useState("")
     const [open, setOpen] = useState(false)
 
@@ -44,17 +41,13 @@ const InvestissementPage: React.FC = () => {
 
     useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
-            if (
-                wrapperRef.current &&
-                !wrapperRef.current.contains(e.target as Node)
-            ) {
+            if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
                 setOpen(false)
             }
         }
 
         document.addEventListener("mousedown", handleClickOutside)
-        return () =>
-            document.removeEventListener("mousedown", handleClickOutside)
+        return () => document.removeEventListener("mousedown", handleClickOutside)
     }, [])
 
     const filteredCountries = useMemo(
@@ -70,14 +63,19 @@ const InvestissementPage: React.FC = () => {
     ================================ */
 
     const montantNumber = Number(form.montant) || 0
-    const montantValid = selectedCountry ? montantNumber >= selectedCountry.minInvestment : false
+    const montantValid = selectedCountry
+        ? montantNumber >= selectedCountry.minInvestment
+        : false
+
     const montantRecevoir = montantNumber * 10.8
 
-    const phoneValid = selectedCountry ?
-        form.phone.length >= selectedCountry.minLength &&
-        form.phone.length <= selectedCountry.maxLength : false
+    const phoneValid = selectedCountry
+        ? form.phone.length >= selectedCountry.minLength &&
+        form.phone.length <= selectedCountry.maxLength
+        : false
 
     const passwordValid = form.password.length >= 4
+
     const passwordsMatch =
         form.password === form.confirmPassword &&
         form.confirmPassword.length > 0
@@ -132,7 +130,9 @@ const InvestissementPage: React.FC = () => {
             })
 
             toast.success("Investissement créé avec succès")
-            navigate("/")
+
+            // 🔴 redirection avec chargement réel
+            window.location.href = "/"
         } catch (err: any) {
             toast.error(err.message)
         }
@@ -144,12 +144,13 @@ const InvestissementPage: React.FC = () => {
 
     return (
         <section className="py-24 px-4 sm:px-6 md:px-[8%] bg-gradient-to-b from-[#E0FFFC] to-white relative">
-            <button
-                onClick={() => navigate("/")}
+            {/* 🔴 bouton retour */}
+            <a
+                href="/"
                 className="absolute top-6 left-6 p-3 rounded-full bg-white shadow-md"
             >
                 <ArrowUp size={24} />
-            </button>
+            </a>
 
             {/* HEADER */}
             <div className="text-center mb-16">
@@ -182,14 +183,19 @@ const InvestissementPage: React.FC = () => {
 
                 {/* FORM */}
                 <form onSubmit={handleSubmit} className="p-6 sm:p-10 space-y-6">
+
                     {/* NOM */}
                     <div className="flex flex-col">
-                        <label className="text-sm text-black/60 mb-1">{t("invest.fields.nom")}</label>
+                        <label className="text-sm text-black/60 mb-1">
+                            {t("invest.fields.nom")}
+                        </label>
                         <input
                             placeholder={t("invest.fields.nom")}
                             className="w-full px-5 py-4 border rounded-xl focus:ring-2 focus:ring-primary"
                             value={form.nom}
-                            onChange={(e) => setForm({ ...form, nom: e.target.value })}
+                            onChange={(e) =>
+                                setForm({ ...form, nom: e.target.value })
+                            }
                         />
                     </div>
 
@@ -203,7 +209,11 @@ const InvestissementPage: React.FC = () => {
                             onClick={() => setOpen(true)}
                             className="flex items-center justify-between px-5 py-4 border rounded-xl cursor-pointer"
                         >
-                            <span>{selectedCountry ? selectedCountry.name : t("invest.searchCountry")}</span>
+                            <span>
+                                {selectedCountry
+                                    ? selectedCountry.name
+                                    : t("invest.searchCountry")}
+                            </span>
                             <ChevronDown />
                         </div>
 
@@ -221,7 +231,9 @@ const InvestissementPage: React.FC = () => {
                                             placeholder={t("invest.searchCountry")}
                                             className="w-full px-4 py-3 border rounded-lg"
                                             value={search}
-                                            onChange={(e) => setSearch(e.target.value)}
+                                            onChange={(e) =>
+                                                setSearch(e.target.value)
+                                            }
                                         />
                                     </div>
 
@@ -229,7 +241,9 @@ const InvestissementPage: React.FC = () => {
                                         {filteredCountries.map(c => (
                                             <li
                                                 key={c.cca2}
-                                                onClick={() => handleCountrySelect(c)}
+                                                onClick={() =>
+                                                    handleCountrySelect(c)
+                                                }
                                                 className="px-4 py-3 hover:bg-[#D0FFF8] cursor-pointer rounded-lg"
                                             >
                                                 {c.name}
@@ -257,18 +271,24 @@ const InvestissementPage: React.FC = () => {
                             }
                             className={`flex-1 px-5 py-4 border rounded-xl ${phoneValid || !selectedCountry ? "" : "border-red-400"}`}
                             value={form.phone}
-                            onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                            onChange={(e) =>
+                                setForm({ ...form, phone: e.target.value })
+                            }
                             disabled={!selectedCountry}
                         />
                     </div>
 
                     {/* NETWORK */}
                     <div className="flex flex-col">
-                        <label className="text-sm text-black/60 mb-1">{t("invest.fields.reseau")}</label>
+                        <label className="text-sm text-black/60 mb-1">
+                            {t("invest.fields.reseau")}
+                        </label>
                         <select
                             className="w-full px-5 py-4 border rounded-xl disabled:opacity-50"
                             value={form.reseauMobile}
-                            onChange={(e) => setForm({ ...form, reseauMobile: e.target.value })}
+                            onChange={(e) =>
+                                setForm({ ...form, reseauMobile: e.target.value })
+                            }
                             disabled={!selectedCountry}
                         >
                             {selectedCountry ? (
@@ -276,20 +296,26 @@ const InvestissementPage: React.FC = () => {
                                     <option key={net}>{net}</option>
                                 ))
                             ) : (
-                                <option value="">{t("invest.selectCountryFirst")}</option>
+                                <option value="">
+                                    {t("invest.selectCountryFirst")}
+                                </option>
                             )}
                         </select>
                     </div>
 
                     {/* AMOUNT */}
                     <div className="flex flex-col">
-                        <label className="text-sm text-black/60 mb-1">Montant</label>
+                        <label className="text-sm text-black/60 mb-1">
+                            Montant
+                        </label>
                         <input
                             type="number"
                             min={selectedCountry?.minInvestment || 0}
                             className={`w-full px-5 py-4 border rounded-xl ${montantValid || !selectedCountry ? "" : "border-red-400"}`}
                             value={form.montant}
-                            onChange={(e) => setForm({ ...form, montant: e.target.value })}
+                            onChange={(e) =>
+                                setForm({ ...form, montant: e.target.value })
+                            }
                             disabled={!selectedCountry}
                         />
                         {selectedCountry && (
@@ -302,35 +328,47 @@ const InvestissementPage: React.FC = () => {
                     {/* RESULT */}
                     <div className="bg-[#E0FFFC] rounded-xl p-5 flex items-center justify-between">
                         <div>
-                            <p className="text-sm text-black/60">{t("invest.receive")}</p>
+                            <p className="text-sm text-black/60">
+                                {t("invest.receive")}
+                            </p>
                             <p className="text-2xl font-bold text-secondary">
                                 {montantRecevoir || 0} {selectedCountry?.currency || ""}
                             </p>
                         </div>
-                        {montantValid && <CheckCircle className="text-primary w-8 h-8" />}
+                        {montantValid && (
+                            <CheckCircle className="text-primary w-8 h-8" />
+                        )}
                     </div>
 
                     {/* PASSWORD */}
                     <div className="flex flex-col">
-                        <label className="text-sm text-black/60 mb-1">{t("invest.fields.password")}</label>
+                        <label className="text-sm text-black/60 mb-1">
+                            {t("invest.fields.password")}
+                        </label>
                         <input
                             type="password"
                             placeholder={t("invest.fields.password")}
                             className={`w-full px-5 py-4 border rounded-xl ${passwordValid ? "" : "border-red-400"}`}
                             value={form.password}
-                            onChange={(e) => setForm({ ...form, password: e.target.value })}
+                            onChange={(e) =>
+                                setForm({ ...form, password: e.target.value })
+                            }
                         />
                     </div>
 
                     {/* CONFIRM PASSWORD */}
                     <div className="flex flex-col">
-                        <label className="text-sm text-black/60 mb-1">{t("invest.fields.confirmPassword")}</label>
+                        <label className="text-sm text-black/60 mb-1">
+                            {t("invest.fields.confirmPassword")}
+                        </label>
                         <input
                             type="password"
                             placeholder={t("invest.fields.confirmPassword")}
                             className={`w-full px-5 py-4 border rounded-xl ${passwordsMatch ? "" : "border-red-400"}`}
                             value={form.confirmPassword}
-                            onChange={(e) => setForm({ ...form, confirmPassword: e.target.value })}
+                            onChange={(e) =>
+                                setForm({ ...form, confirmPassword: e.target.value })
+                            }
                         />
                         {!passwordsMatch && form.confirmPassword && (
                             <p className="text-sm text-red-500 mt-1 flex items-center gap-1">
@@ -340,6 +378,7 @@ const InvestissementPage: React.FC = () => {
                         )}
                     </div>
 
+                    {/* ACTIONS */}
                     <div className="flex flex-col sm:flex-row gap-4">
                         <button
                             disabled={!canSubmit || loading}
@@ -358,7 +397,6 @@ const InvestissementPage: React.FC = () => {
                 </form>
             </motion.div>
 
-            {/* TOASTIFY */}
             <ToastContainer position="top-right" autoClose={5000} hideProgressBar />
         </section>
     )
