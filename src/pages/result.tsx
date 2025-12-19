@@ -127,7 +127,7 @@ Merci pour votre accompagnement.`
         // { label: "Téléphone", value: user.phone, icon: <Phone /> },
         { label: "Montant investi", value: `${user.MontantIvest} `, icon: <MdOutlineAccountBalanceWallet /> },
         { label: "Montant à recevoir", value: `${user.MontantRecevoir} `, icon: <MdOutlineAccountBalanceWallet /> },
-        { label: "Durée", value: user.duree ?? "—", icon: <MdOutlineAccountBalanceWallet /> },
+        // { label: "Durée", value: user.duree ?? "—", icon: <MdOutlineAccountBalanceWallet /> },
     ]
 
     return (
