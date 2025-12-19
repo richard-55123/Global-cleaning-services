@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom"
+import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom"
 import RootLayout from "./components/layout/RootLayout"
 import LoginInvestissementPage from "./pages/LoginInvestissementPage"
 import InvestissementPage from "./pages/investire"
@@ -11,20 +11,23 @@ const App: React.FC = () => {
   const isAuth = hasToken()
 
   return (
-    <Routes>
-      {/* Routes principales avec layout */}
-      <Route path="/" element={<RootLayout />}>
-        <Route index element={isAuth ? <UserInvest /> : <Home />} />
-        <Route path="conseil" element={<DashboardPage />} />
-      </Route>
+    <BrowserRouter>
+      <Routes>
+        {/* Routes principales avec layout */}
+        <Route path="/" element={<RootLayout />}>
+          <Route path="/conseil" element={<DashboardPage />} />
 
-      {/* Routes sans layout */}
-      <Route path="/login" element={<LoginInvestissementPage />} />
-      <Route path="/investir" element={<InvestissementPage />} />
+          <Route index element={isAuth ? <UserInvest /> : <Home />} />
+        </Route>
 
-      {/* Redirection pour les routes inconnues */}
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+        {/* Routes sans layout */}
+        <Route path="/login" element={<LoginInvestissementPage />} />
+        <Route path="/investir" element={<InvestissementPage />} />
+
+        {/* Redirection pour les routes inconnues */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
