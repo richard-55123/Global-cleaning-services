@@ -13,7 +13,7 @@ const UserInvest: React.FC = () => {
     if (loading) return <p className="text-center py-20 text-gray-500">Chargement...</p>
     if (error) return <p className="text-center py-20 text-red-500">{error}</p>
 
-    const conseillerPhone = "229XXXXXXXX"
+    const conseillerPhone = "+1(334)2009817"
 
     const whatsappLink = (message: string) =>
         `https://wa.me/${conseillerPhone}?text=${encodeURIComponent(message)}`
